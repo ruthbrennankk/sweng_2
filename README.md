@@ -10,7 +10,7 @@
 - Navigate to your documents or wherever you want to store the repository (Using cd in your terminal)
 - Run the following command to clone the repo ➡ git clone https://github.com/ruthbrennankk/sweng_2.git
 You've now got the repo down! 
-- Navigate into the directory with the following command cd Sweng-11
+- Navigate into the directory with the following command cd Sweng_2
 - Run the git pull command to get the most up to date code.
  
 #### For Linux
@@ -18,7 +18,7 @@ You've now got the repo down!
 - Navigate to your documents or wherever you want to store the repository (Using cd in your terminal)
 - Run the following command to clone the repo ➡ git clone https://github.com/ruthbrennankk/sweng_2.git
 You've now got the repo down! 
-- Navigate into the directory with the following command cd Sweng-11
+- Navigate into the directory with the following command cd Sweng_2
 - Run the git pull command to get the most up to date code.
 
 #### For Mac
@@ -28,7 +28,7 @@ You've now got the repo down!
 - Navigate to your documents or wherever you want to store the repository (Using cd in your terminal)
 - Run the following command to clone the repo ➡ git clone https://github.com/ruthbrennankk/sweng_2.git
 You've now got the repo down! 
-- Navigate into the directory with the following command cd Sweng-11
+- Navigate into the directory with the following command cd Sweng_2
 - Run the git pull command to get the most up to date code.
 - Git help
 
