@@ -4,7 +4,7 @@
 ### Getting started with Git & GitHub
 
 #### For Windows
-- Download the git client from here
+- Download the git client from here https://git-scm.com/downloads
 - Install the git client
 - Open either command prompt, or gitbash
 - Navigate to your documents or wherever you want to store the repository (Using cd in your terminal)
