@@ -6,7 +6,7 @@
 - ZenHub is a team collaboration solution built directly into GitHub. We can plan roadmaps, use taskboards and generate automated reports directly from our work in GitHub.
 - We can use the Google Drive for documentation and other relevant file exchanges. I have the folder created [here](https://drive.google.com/drive/folders/1ErpSNoZmibHD-GwHiezIWRxBtZAbVMLH?usp=sharing).
 
-###Project Technologies
+### Project Technologies
 - MERN Stack Tutorial: [here](https://medium.com/swlh/how-to-create-your-first-mern-mongodb-express-js-react-js-and-node-js-stack-7e8b20463e66)
 - Other Options
   - [YouTube Tutorial](https://www.youtube.com/watch?v=7CqJlxBYj-M)
