@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('This is a nodemon test, please work God!! Thank you! Servers suck dick')
 })
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
