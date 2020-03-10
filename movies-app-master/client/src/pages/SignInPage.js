@@ -33,14 +33,27 @@ class SignInPage extends Component {
     var email = '';
     email = this.state.email;
     var password = '';
-    password = this.state.id;
+    password = this.state.password;
+    var result;
     
     
 
 
-    const payload = {email};
+    const payload = email;
     await apis.getUserByEmail(payload).then(res => {
       window.alert('Login Account attempt')
+      console.log(this.state);
+      console.log(res.data.data.name);
+      console.log(res.data.data.password);
+      console.log(this.state.password);
+      if(res.data.data.password === this.state.password){
+        console.log("It works");
+        console.log(res.data.data.name + " Just Logged on Succesfully");
+      }else{
+        console.log("it did not work or password incorrect.")
+      }
+      console.log('The User Account: ');
+      console.log(res.data.data);
       this.setState({
         id: '',
         email: '',
@@ -49,8 +62,8 @@ class SignInPage extends Component {
       })
     })
 
-    console.log('User signed in with this data:');
-    console.log(this.state);
+    
+    //console.log(this.state);
   }
   
 
