@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './SignInPage.css';
+
 class SignInPage extends Component {
   constructor() {
     super();
@@ -32,6 +34,8 @@ class SignInPage extends Component {
 
   render() {
     return (
+      <div className="App1">
+      <div className="App__Left1">
       <div className = "SignInPage"> 
       
         <form onSubmit={this.handleSubmit}>
@@ -50,6 +54,8 @@ class SignInPage extends Component {
           </div>
         </form>
       
+      </div>
+      </div>
       </div>
     );
   }
