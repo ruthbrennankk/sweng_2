@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import apis from '../api';
 
 class SignInPage extends Component {
   constructor() {
     super();
 
     this.state = {
+      id: '',
       email: '',
       password: ''
+      
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,12 +26,33 @@ class SignInPage extends Component {
     });
   }
 
-  handleSubmit(e) {
+   
+
+  handleSubmit = async (e) => {
     e.preventDefault();
+    var email = '';
+    email = this.state.email;
+    var password = '';
+    password = this.state.id;
+    
+    
+
+
+    const payload = {email};
+    await apis.getUserByEmail(payload).then(res => {
+      window.alert('Login Account attempt')
+      this.setState({
+        id: '',
+        email: '',
+        password: ''
+        
+      })
+    })
 
     console.log('User signed in with this data:');
     console.log(this.state);
   }
+  
 
   render() {
     return (
@@ -53,6 +77,16 @@ class SignInPage extends Component {
       </div>
     );
   }
+  
+}
+function makeid(length) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 }
 
 export default SignInPage;
