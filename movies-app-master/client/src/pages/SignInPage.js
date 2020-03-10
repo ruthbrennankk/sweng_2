@@ -35,6 +35,7 @@ class SignInPage extends Component {
     var password = '';
     password = this.state.password;
     var result;
+    var loginSuccess = false;
     
     
 
@@ -42,24 +43,53 @@ class SignInPage extends Component {
     const payload = email;
     await apis.getUserByEmail(payload).then(res => {
       window.alert('Login Account attempt')
-      console.log(this.state);
-      console.log(res.data.data.name);
-      console.log(res.data.data.password);
-      console.log(this.state.password);
-      if(res.data.data.password === this.state.password){
-        console.log("It works");
-        console.log(res.data.data.name + " Just Logged on Succesfully");
+      //checks if email is correct
+      if(res.data.success === false){
+        console.log("Email Incorrect Try Again");
+        //window.alert('Email Incorect');
+        loginSuccess = false;
       }else{
-        console.log("it did not work or password incorrect.")
+        //console.log(this.state);
+        //console.log(res.data.data.name);
+        //console.log(res.data.data.password);
+        //console.log(this.state.password);
+        if(res.data.data.password === this.state.password){
+          console.log("It works");
+          loginSuccess = true;
+          console.log(res.data.data.name + " Just Logged on Succesfully");
+          console.log(res.data.data.name + " is Rank : "+res.data.data.rank);
+        }else{
+          console.log("Password incorrect.");
+          loginSuccess = false;
+        }
+        console.log('The User Account: ');
+        console.log(res.data.data);
+
       }
-      console.log('The User Account: ');
-      console.log(res.data.data);
-      this.setState({
-        id: '',
-        email: '',
-        password: ''
-        
-      })
+     // resets state of text boxs depending on outcome of login attempt
+      if(loginSuccess){
+        this.setState({
+          id: '',
+          email: '',
+          password: ''
+          
+        })
+
+      }else if(!loginSuccess && res.data.success === false){
+        this.setState({
+          id: '',
+          email: '',
+          password: ''
+          
+        })
+      }else{
+        this.setState({
+          id: '',
+          password: ''
+          
+        })
+      }
+      
     })
 
     

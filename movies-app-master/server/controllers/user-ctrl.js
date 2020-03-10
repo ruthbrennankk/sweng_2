@@ -112,42 +112,24 @@ getUsers = async (req, res) => {
 
 getUserbyEmail = async (req, res,) => {
    
- console.log("Check Check RESULT CODE EXECUTED");
+ console.log("Email CODE Entered");
 
   await User.findOne({"email": req.params.email}, function(err, user) {
 
     if (err) {
+        //console.log("other error");
                  return res.status(400).json({ success: false, error: err })
             }
         if (!user) {
+            console.log("Not a user");
             return res
-                .status(404)
+                .status(200) // This is Temporary for testing and MUST BE CHANGED BEFORE MERGE
                 .json({ success: false, error: `User not found` })
         }else
-    //console.log("Check Check RESULT CODE EXECUTED SUCCES");
-    //console.log(user);
+    console.log("Email CODE SUCCES");
     return  res.status(200).json({ success: true, data: user})
     
   }).catch(err => console.log(err));
-
-   // await User.findOne({ _email: req.params.email }, (err, user) => {
-    //     if (err) {
-    //         return res.status(400).json({ success: false, error: err })
-    //     }
-
-    //     if (!user) {
-    //         return res
-    //             .status(404)
-    //             .json({ success: false, error: `User not found` })
-    //     }
-       
-    //     return res.status(200).json({ success: true, data: user })
-    // }).catch(err => console.log(err))
-
- // var query = { email: req.params.email };
-    
-
-
 
 }
 module.exports = {
