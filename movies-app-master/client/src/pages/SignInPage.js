@@ -32,9 +32,7 @@ class SignInPage extends Component {
     e.preventDefault();
     var email = '';
     email = this.state.email;
-    var password = '';
-    password = this.state.password;
-    var result;
+    
     var loginSuccess = false;
     
     
@@ -122,14 +120,6 @@ class SignInPage extends Component {
   }
   
 }
-function makeid(length) {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-     result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
+
 
 export default SignInPage;

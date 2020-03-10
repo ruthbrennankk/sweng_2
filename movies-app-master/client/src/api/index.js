@@ -18,6 +18,14 @@ export const deleteUserById = id => api.delete(`/user/${id}`)
 export const getUserById = id => api.get(`/user/${id}`)
 export const getUserByEmail = payload => api.get(`/user/${payload}`)
 
+//Article Apis
+export const insertArticle = payload => api.post(`/article`, payload)
+export const getAllArticles = () => api.get(`/articles`)
+export const updateArticleById = (id, payload) => api.put(`/article/${id}`, payload)
+export const deleteArticleById = id => api.delete(`/article/${id}`)
+export const getArticleById = id => api.get(`/article/${id}`)
+
+
 
 
 const apis = {
@@ -34,6 +42,13 @@ const apis = {
     deleteUserById,
     getUserById,
     getUserByEmail,
+
+    insertArticle,
+    getAllArticles,
+    updateArticleById,
+    deleteArticleById,
+    getArticleById,
+    
     
 }
 
