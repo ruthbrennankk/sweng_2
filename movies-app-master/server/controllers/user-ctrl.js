@@ -123,7 +123,7 @@ getUserbyEmail = async (req, res,) => {
         if (!user) {
             console.log("Not a user");
             return res
-                .status(200) // This is Temporary for testing and MUST BE CHANGED BEFORE MERGE
+                .status(404) // This is Temporary for testing and MUST BE CHANGED BEFORE MERGE should be 404
                 .json({ success: false, error: `User not found` })
         }else
     console.log("Email CODE SUCCES");

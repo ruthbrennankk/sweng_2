@@ -73,22 +73,18 @@ class SignInPage extends Component {
           
         })
 
-      }else if(!loginSuccess && res.data.success === false){
-        this.setState({
-          id: '',
-          email: '',
-          password: ''
-          
-        })
-      }else{
-        this.setState({
-          id: '',
-          password: ''
-          
-        })
+      
       }
       
+    }).catch(err => console.log(err));
+    
+    this.setState({
+      id: '',
+      password: ''
+      
     })
+
+    console.log("Got Past it all");
 
     
     //console.log(this.state);
