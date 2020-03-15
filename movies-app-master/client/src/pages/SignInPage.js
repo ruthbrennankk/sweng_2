@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 import './SignInPage.css';
 
@@ -34,8 +36,8 @@ class SignInPage extends Component {
 
   render() {
     return (
-      <div className="App1">
-      <div className="App__Left1">
+      <div className="SignInApp">
+      <div className="SignInApp__Left">
       <div className = "SignInPage"> 
       
         <form onSubmit={this.handleSubmit}>
@@ -50,7 +52,9 @@ class SignInPage extends Component {
           </div>
 
           <div className="SignInField">
+            <NavLink to="/home">
             <button className="SignIn__Button mr-20">Sign In</button>
+            </NavLink>
           </div>
         </form>
       
