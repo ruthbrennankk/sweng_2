@@ -1,0 +1,42 @@
+.WelcomePageApp {
+  height: 100vh;
+  display: flex;
+  color: #5a2a83;
+}
+
+
+.Welcome_Page {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+  }
+  
+  .Welcome__Text {
+    text-align: center;
+    color: #5a2a83;
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .Welcome__Text2 {
+    text-align: center;
+    color: #5a2a83;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .Welcome__Button {
+    
+    background-color: #5a2a83;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 15px 70px;
+    font-size: .8em;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+  }
