@@ -14,6 +14,19 @@ import ProfilePage from './pages/ProfilePage.jsx';
 class App extends Component {
   render() {
     return (
+      <div>
+        <header>
+          <h1 className="App-title" >Graphs Testing</h1>
+        </header>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*render() {
+    return (
       <Router>
         <Route exact path="/" component={WelcomePage}>
         </Route>
@@ -29,7 +42,4 @@ class App extends Component {
         </Route>
       </Router>
     );
-  }
-}
-
-export default App;
+  }*/
