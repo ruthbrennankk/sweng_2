@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import SettingsPage from './pages/SettingsPage.jsx';
 
 
 class App extends Component {
@@ -26,6 +27,8 @@ class App extends Component {
         <Route exact path="/articles" component={ArticlesPage}>
         </Route>
         <Route exact path="/profile" component={ProfilePage}>
+        </Route>
+        <Route exact path="/settings" component={SettingsPage}>
         </Route>
       </Router>
     );
