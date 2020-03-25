@@ -13,7 +13,7 @@ const componentsStyle = {
   display: 'flex',
 };
 
-class ArticlesPage extends Component {
+class SettingsPage extends Component {
   render() {
     return (
       <Grid>
@@ -26,7 +26,7 @@ class ArticlesPage extends Component {
 
                 {/*----fill in screens here-----*/}
 
-                Articles Page
+                Settings Page
 
                 </Grid>
             </Grid>
@@ -35,4 +35,4 @@ class ArticlesPage extends Component {
     );
   }
 }
-export default ArticlesPage;
+export default SettingsPage;

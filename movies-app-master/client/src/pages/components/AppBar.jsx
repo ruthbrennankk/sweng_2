@@ -1,5 +1,5 @@
 import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -12,6 +12,11 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Logo from './tacit_logo.png';
+import Button from '@material-ui/core/Button';
+
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -25,6 +30,29 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    fontFamily: 'Calibri',
+    color: '#E2DAF7',
+    fontSize: 30
+  },
+
+  Userl1: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    marginTop: theme.spacing(.4),
+    fontFamily: 'Calibri',
+    fontWeight: 700,
+    color: 'white',
+    fontSize: 14,
+    whiteSpace: 'pre-wrap'
+  },
+
+  Userl2: {
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
+    fontFamily: 'Calibri',
+    color: 'white',
+    fontSize: 12,
+    whiteSpace: 'pre-wrap'
   },
   
   inputRoot: {
@@ -53,6 +81,20 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
+
+const dividerStyles = {
+  backgroundColor: '#E2DAF7',
+  opacity: 0.15
+};
+
+const style = {
+  background : '#5A2A83',
+  height: 60
+};
+
+const textStyle = {
+  postion: 'absolute'
+}
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
@@ -138,18 +180,13 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" color='transparent'>
+      <AppBar position="static" style={style}>
         <Toolbar>
-          <IconButton
-            edge="start"
+          <img src={Logo} 
             className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
+            height="25" width="25" />
           <Typography className={classes.title} variant="h6" noWrap>
-            Learnovate
+            tacit
           </Typography>
           
           <div className={classes.grow} />
@@ -159,11 +196,22 @@ export default function PrimarySearchAppBar() {
                 <MailIcon />
               </Badge>
             </IconButton>
+            <Divider orientation="vertical" flexItem style={dividerStyles} />
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <Divider orientation="vertical" flexItem style={dividerStyles} />
+            <div style={textStyle}>
+              <Typography className={classes.Userl1} variant="h6">
+              User Profile
+              </Typography>
+              <Typography className={classes.Userl2} variant="h6">
+              Jr Engineer
+              </Typography>
+            </div>
+            
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -177,6 +225,7 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
+              
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"

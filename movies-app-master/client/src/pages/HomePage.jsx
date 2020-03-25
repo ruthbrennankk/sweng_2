@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MenuList, MenuItem } from '@material-ui/core';
+import { MenuList, MenuItem, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import  NavigationBar  from './components/NavigationBar.jsx';
 import  AppBar  from './components/AppBar.jsx';
+import NoteTitleBar from './components/NoteTitleBar.jsx';
+import Tabs from './components/Tabs.jsx';
 import './ProfilePage.css';
+
+const componentsStyle = {
+  display: 'flex',
+};
 
 class HomePage extends Component {
   render() {
     return (
-      <div>
+      <Grid>
         <AppBar></AppBar>
-        <div>
-          <NavigationBar/>
-          <div className="ProfileDetails">Home Page </div>
-        </div>
-      </div>
+          <Grid style={componentsStyle}>
+            <Tabs></Tabs>
+            <Grid style={{flex: 1 }}>
+              <NoteTitleBar/>
+              <Grid>
+
+                {/*----fill in screens here-----*/}
+
+                Home Page
+
+                </Grid>
+            </Grid>
+          </Grid>
+      </Grid>
     );
   }
 }
