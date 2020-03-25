@@ -10,46 +10,32 @@ import DashboardPage from './pages/DashboardPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 
-//Graph Imports
-
+import LineGraph from "./Graphs/LineGraph";
 
 
 import Chart from "chart.js";
 //import classes from "./LineGraph.module.css";
 
-export default class LineGraph extends Component {
-    chartRef = React.createRef();
-    
-    componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
-        
-        new Chart(myChartRef, {
-            type: "line",
-            data: {
-                //Bring in data
-                labels: ["Jan", "Feb", "March"],
-                datasets: [
-                    {
-                        label: "Sales",
-                        data: [86, 67, 91],
-                    }
-                ]
-            },
-            options: {
-                //Customize chart options
-            }
-        });
-    }
-    render() {
-        return (
-            <div>
-                <canvas
-                    id="myChart"
-                    ref={this.chartRef}
-                />
-            </div>
-        )
-    }
+export default class Dashboard extends Component {
+  state = {
+      //data: managerData,
+      //labels: yearLabels
+  }
+
+  render() {
+     // const { data, labels } = this.state;
+      return (
+          <div>
+          <header>
+              <h1>Levels and Points Over Time</h1>
+          </header>
+              <LineGraph
+                  //data={data}
+                  //labels={labels} 
+              />
+          </div>
+      )
+  }
 }
 
 /*render() {
