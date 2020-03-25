@@ -13,7 +13,20 @@ import ProfilePage from './pages/ProfilePage.jsx';
 
 class App extends Component {
   render() {
-    
+    var myBarChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+    });
+    data: {
+      datasets: [{
+          barPercentage: 0.5,
+          barThickness: 6,
+          maxBarThickness: 8,
+          minBarLength: 2,
+          data: [10, 20, 30, 40, 50, 60, 70]
+      }]
+  };
     return (
       <div>
         <header>
