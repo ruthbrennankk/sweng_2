@@ -13,6 +13,7 @@ import ProfilePage from './pages/ProfilePage.jsx';
 
 class App extends Component {
   render() {
+    
     return (
       <div>
         <header>
