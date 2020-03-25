@@ -10,34 +10,47 @@ import DashboardPage from './pages/DashboardPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 
+//Graph Imports
 
-class App extends Component {
-  render() {
-    var myBarChart = new Chart(ctx, {
-      type: 'bar',
-      data: data,
-      options: options
-    });
-    data: {
-      datasets: [{
-          barPercentage: 0.5,
-          barThickness: 6,
-          maxBarThickness: 8,
-          minBarLength: 2,
-          data: [10, 20, 30, 40, 50, 60, 70]
-      }]
-  };
-    return (
-      <div>
-        <header>
-          <h1 className="App-title" >Graphs Testing</h1>
-        </header>
-      </div>
-    );
-  }
+
+
+import Chart from "chart.js";
+//import classes from "./LineGraph.module.css";
+
+export default class LineGraph extends Component {
+    chartRef = React.createRef();
+    
+    componentDidMount() {
+        const myChartRef = this.chartRef.current.getContext("2d");
+        
+        new Chart(myChartRef, {
+            type: "line",
+            data: {
+                //Bring in data
+                labels: ["Jan", "Feb", "March"],
+                datasets: [
+                    {
+                        label: "Sales",
+                        data: [86, 67, 91],
+                    }
+                ]
+            },
+            options: {
+                //Customize chart options
+            }
+        });
+    }
+    render() {
+        return (
+            <div>
+                <canvas
+                    id="myChart"
+                    ref={this.chartRef}
+                />
+            </div>
+        )
+    }
 }
-
-export default App;
 
 /*render() {
     return (
