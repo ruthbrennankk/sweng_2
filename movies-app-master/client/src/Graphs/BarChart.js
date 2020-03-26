@@ -18,11 +18,11 @@ export default class BarChart extends Component {
             type: "horizontalBar",
             data: {
                 //Bring in data
-                labels: ["Jan", "Feb", "March"],
+                labels: this.props.labels,
                 datasets: [
                     {
                         //label: "Sales",
-                        data: [86, 67, 91],
+                        data: this.props.data,
                         //fill: "#e5d8f0",
                         borderColor: "#9545d8",
                         backgroundColor: "#9545d8",

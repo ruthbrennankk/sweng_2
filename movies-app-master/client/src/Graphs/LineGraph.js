@@ -16,11 +16,11 @@ export default class LineGraph extends Component {
             type: "line",
             data: {
                 //Bring in data
-                labels: ["Jan", "Feb", "March"],
+                labels: this.props.labels,
                 datasets: [
                     {
                         //label: "Sales",
-                        data: [86, 67, 91],
+                        data: this.props.data,
                         //fill: "#e5d8f0",
                         borderColor: "#9545d8",
                         

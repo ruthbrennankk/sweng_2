@@ -10,6 +10,9 @@ import DashboardPage from './pages/DashboardPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 
+import LineGraph from "./Graphs/LineGraph";
+import BarChart from "./Graphs/BarChart";
+import Doughnut from "./Graphs/Doughnut";
 
 export default class Dashboard extends Component {
   render() {
@@ -31,4 +34,3 @@ export default class Dashboard extends Component {
     );
   }
 }
-
