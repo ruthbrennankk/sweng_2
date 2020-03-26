@@ -9,11 +9,20 @@ import NoteTitleBar from './components/NoteTitleBar.jsx';
 import Tabs from './components/Tabs.jsx';
 import './ProfilePage.css';
 
+//Import Graphs
+import LineGraph from "./Graphs/LineGraph";
+import BarChart from "./Graphs/BarChart";
+import Doughnut from "./Graphs/Doughnut";
+
 const componentsStyle = {
   display: 'flex',
 };
 
 class DashboardPage extends Component {
+  state = {
+    data: [65, 59, 80, 81, 56],
+    labels: ["Jan", "Feb", "March","April", "May", "June"],
+  }
   render() {
     return (
       <Grid>
@@ -29,6 +38,18 @@ class DashboardPage extends Component {
                 Dashboard Page
 
                 </Grid>
+                <Doughnut
+                  data = {this.state.data}
+                  labels={this.state.labels} 
+                />
+                <BarChart
+                  data = {this.state.data}
+                  labels={this.state.labels} 
+                />
+                <LineGraph
+                  data = {this.state.data}
+                  labels={this.state.labels} 
+                />
             </Grid>
           </Grid>
       </Grid>

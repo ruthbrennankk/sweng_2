@@ -1,10 +1,12 @@
+//Vertical Bar Chart Class
+
 //Graph Imports
 import React, { Component } from 'react';
 import Chart from "chart.js";
 
 //import classes from "./LineGraph.module.css";
 
-export default class LineGraph extends Component {
+export default class BarChart extends Component {
     chartRef = React.createRef();
     
     
@@ -13,16 +15,17 @@ export default class LineGraph extends Component {
         Chart.defaults.global.legend.display = false;
         
         new Chart(myChartRef, {
-            type: "line",
+            type: "horizontalBar",
             data: {
                 //Bring in data
-                labels: ["Jan", "Feb", "March"],
+                labels: this.props.labels,
                 datasets: [
                     {
                         //label: "Sales",
-                        data: [86, 67, 91],
+                        data: this.props.data,
                         //fill: "#e5d8f0",
                         borderColor: "#9545d8",
+                        backgroundColor: "#9545d8",
                         
 
                         
