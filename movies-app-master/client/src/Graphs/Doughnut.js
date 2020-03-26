@@ -4,12 +4,8 @@
 import React, { Component } from 'react';
 import Chart from "chart.js";
 
-//import classes from "./LineGraph.module.css";
-
 export default class Doughnut extends Component {
     chartRef = React.createRef();
-    
-   // var colours = ["", "#", "#", "#", "#"];
     
     
     componentDidMount() {
@@ -20,7 +16,7 @@ export default class Doughnut extends Component {
             type: "doughnut",
             data: {
                 //Bring in data
-                labels: ["Jan", "Feb", "March"],
+                labels: this.props.labels,
                 datasets: [
                     {
                       // turle greenn, pale orange, pale red, marigold, white
@@ -38,7 +34,7 @@ export default class Doughnut extends Component {
                       '#e3b109',
                       '#918e8e'
                       ],
-                      data: [65, 59, 80, 81, 56]
+                      data: this.props.data
                     }
                   ]
             },
