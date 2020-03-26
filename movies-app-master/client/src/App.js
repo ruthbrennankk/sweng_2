@@ -12,7 +12,7 @@ import ProfilePage from './pages/ProfilePage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx';
 
 
-class App extends Component {
+export default class Dashboard extends Component {
   render() {
     return (
       <Router>
@@ -35,4 +35,3 @@ class App extends Component {
   }
 }
 
-export default App;
