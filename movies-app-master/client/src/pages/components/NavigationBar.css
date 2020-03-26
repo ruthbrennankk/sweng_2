@@ -1,6 +1,11 @@
 .NavigationBG {
-    width: 10%;
+    width: 4%;
     height: 100%;
     background-color: white;
     color: #9545d8;
+  }
+
+  .NavigationIcons{
+      color: #9545d8;
+      flex-wrap: wrap;
   }
