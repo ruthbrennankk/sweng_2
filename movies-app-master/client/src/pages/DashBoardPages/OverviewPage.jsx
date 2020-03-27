@@ -12,6 +12,10 @@ import ArticlesImpact from "./DashboardComponents/Overview_ArticlesImpact.jsx";
 import ArticlesRated from "./DashboardComponents/Overview_ArticlesRated.jsx";
 import Overview_LevelsAndPointsOvertime from "./DashboardComponents/Overview_LevelsAndPointsOvertime.jsx";
 import Overview_Contribution from "./DashboardComponents/Overview_Contribution.jsx";
+//Graphs 
+import LineGraph from "./../Graphs/LineGraph";
+import BarChart from "./../Graphs/BarChart";
+import Doughnut from "./../Graphs/Doughnut";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,6 +41,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function OverviewPage() {
   const classes = useStyles();
+  var graph = {
+    data: [65, 59, 80, 81, 56],
+    labels: ["Jan", "Feb", "March","April", "May", "June"],
+  }
 
   return (
     <div className={classes.root}>
@@ -58,6 +66,10 @@ export default function OverviewPage() {
           <Grid container wrap="nowrap" spacing={10}>
             <ArticlesImpact />
             <ArticlesRated />
+            <Doughnut
+                  data = {graph.data}
+                  labels={graph.labels} 
+              />
           </Grid>
         </div>
       </Paper>
