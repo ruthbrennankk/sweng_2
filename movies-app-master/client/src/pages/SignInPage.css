@@ -1,12 +1,12 @@
-.App {
+.SignInApp {
     height: 100vh;
     display: flex;
-    color: #2a835e;
+    color: #5a2a83;
   }
   
-  .App__Left {
+  .SignInApp__Left {
     width: 50%;
-    background-color: #2a835e;
+    background-color: #5a2a83;
   }
   
   .SignInPage{

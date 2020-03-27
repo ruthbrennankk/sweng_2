@@ -1,29 +1,34 @@
-.App {
+.WelcomePageApp {
   height: 100vh;
   display: flex;
   color: #5a2a83;
 }
 
-.App__Left {
-  width: 50%;
-  background-color: #5a2a83;
-}
 
 .Welcome_Page {
     position: absolute;
       top: 50%;
-      left: 75%;
+      left: 50%;
       margin-right: -50%;
       transform: translate(-50%, -50%)
   }
   
   .Welcome__Text {
+    text-align: center;
     color: #5a2a83;
     display: block;
     font-size: 20px;
     font-weight: 800;
   }
+  .Welcome__Text2 {
+    text-align: center;
+    color: #5a2a83;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+  }
   .Welcome__Button {
+    
     background-color: #5a2a83;
     color: white;
     border: none;
