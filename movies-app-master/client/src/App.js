@@ -5,11 +5,48 @@ import { Link } from 'react-router-dom';
 
 import WelcomePage from './pages/WelcomePage.jsx';
 import SignInPage from './pages/SignInPage.js';
+
+//import Login from './pages/Login.js';
+//import UserContext from "./api/acnt-mang.js";
+
 import HomePage from './pages/HomePage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import ArticlesPage from './pages/ArticlesPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 import SettingsPage from './pages/SettingsPage.jsx';
+
+
+//import './App.css';
+/*export const AuthContext = React.createContext();
+const initialState = {
+  isAuthenticated: false,
+  user: null,
+  token: null,
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      
+    localStorage.setItem("user", JSON.stringify(action.payload.user));
+    localStorage.setItem("token", JSON.stringify(action.payload.token));
+    return {
+      ...state,
+      isAuthenticated: true,
+      user: action.payload.user,
+      token: action.payload.token
+    };
+    case "LOGOUT":
+      localStorage.clear();
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null
+      };
+      default:
+        return state;
+
+  }
+};*/
 
 
 export default class Dashboard extends Component {
@@ -30,6 +67,7 @@ export default class Dashboard extends Component {
         </Route>
         <Route exact path="/settings" component={SettingsPage}>
         </Route>
+
       </Router>
     );
   }
