@@ -4,13 +4,21 @@
 import React, { Component } from 'react';
 import Chart from "chart.js";
 
+/*
+    data : Integer Array
+    labels : String Array
+    backgroundColor : String Array eg [ '#75bf53', '#fda54b','#e35245','#ffc400','#d9d9d9']
+    hoverBackgroundColor : String Array eg ['#539435', '#f2820f','#c44a3f', '#e3b109','#918e8e']
+    displayLegend : Boolean 
+*/
+
 export default class Doughnut extends Component {
     chartRef = React.createRef();
     
     
     componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
-        Chart.defaults.global.legend.display = false;
+        Chart.defaults.global.legend.display = this.props.displayLegend;
         
         new Chart(myChartRef, {
             type: "doughnut",
@@ -20,20 +28,8 @@ export default class Doughnut extends Component {
                 datasets: [
                     {
                       // turle greenn, pale orange, pale red, marigold, white
-                      backgroundColor: [
-                        '#75bf53',
-                        '#fda54b',
-                        '#e35245',
-                        '#ffc400',
-                        '#d9d9d9'
-                    ],
-                      hoverBackgroundColor: [
-                      '#539435',
-                      '#f2820f',
-                      '#c44a3f',
-                      '#e3b109',
-                      '#918e8e'
-                      ],
+                      backgroundColor: this.props.backgroundColor,
+                      hoverBackgroundColor: this.props.hoverBackgroundColor,
                       data: this.props.data
                     }
                   ]

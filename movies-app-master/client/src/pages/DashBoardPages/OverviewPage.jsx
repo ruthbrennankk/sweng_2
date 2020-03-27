@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 export default function OverviewPage() {
   const classes = useStyles();
   var graph = {
-    data: [65, 59, 80, 81, 56],
+    data: [65, 59, 80, 81, 56,300],
     labels: ["Jan", "Feb", "March","April", "May", "June"],
   }
 
@@ -67,9 +67,12 @@ export default function OverviewPage() {
             <ArticlesImpact />
             <ArticlesRated />
             <Doughnut
-                  data = {graph.data}
-                  labels={graph.labels} 
-              />
+                  data = {[65, 59, 80, 81]}
+                  labels={["Jan", "Feb", "March","April"]} 
+                  backgroundColor = {[ '#75bf53', '#fda54b','#e35245','#ffc400','#d9d9d9']}
+                  hoverBackgroundColor = { ['#539435', '#f2820f','#c44a3f', '#e3b109','#918e8e']}
+                  displayLegend = {true}
+            />
           </Grid>
         </div>
       </Paper>
@@ -79,6 +82,15 @@ export default function OverviewPage() {
           <Grid container wrap="nowrap" spacing={2}>
             <Overview_LevelsAndPointsOvertime />
           </Grid>
+          <LineGraph
+                    data = {graph.data}
+                    labels={graph.labels}
+                    displayLengend = {false}
+                    borderColour =  {"#9545d8"}
+                    xAxisLabel = {'Date'}
+                    yAxisLabel = {'Level and Points'}
+                    fill = {true}
+          />
         </div>
 
         <Divider />
@@ -86,6 +98,16 @@ export default function OverviewPage() {
           <Grid container wrap="nowrap" spacing={2}>
             <Overview_Contribution />
           </Grid>
+          <LineGraph
+                    data = {graph.data}
+                    labels={graph.labels}
+                    displayLengend = {false}
+                    borderColour =  {"#9545d8"}
+                    xAxisLabel = {'Date'}
+                    yAxisLabel = {'Contributions'}
+                    fill = {true}
+          />
+          
         </div>
       </Paper>
     </div>

@@ -4,13 +4,23 @@ import Chart from "chart.js";
 
 //import classes from "./LineGraph.module.css";
 
+/*
+    displayLegend : Boolean 
+    data : Integer Array 
+    labels : String Array 
+    borderColour : String formatted "#9545d8" 
+    xAxisLabel : String eg 'Date'
+    yAxisLabel : String eg 'Time'
+    fill : Boolean
+*/
+
 export default class LineGraph extends Component {
     chartRef = React.createRef();
     
     
     componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
-        Chart.defaults.global.legend.display = false;
+        Chart.defaults.global.legend.display = this.props.displayLengend;
         
         new Chart(myChartRef, {
             type: "line",
@@ -21,11 +31,8 @@ export default class LineGraph extends Component {
                     {
                         //label: "Sales",
                         data: this.props.data,
-                        //fill: "#e5d8f0",
-                        borderColor: "#9545d8",
-                        
-
-                        
+                        fill: this.props.fill,
+                        borderColor: this.props.borderColour,//"#9545d8",  
                     }
                 ]
             },
@@ -35,23 +42,23 @@ export default class LineGraph extends Component {
                 maintainAspectRatio: false,
                 layout: {
                   padding: {
-                      top: 5,
+                      top: 25,
                       left: 15,
                       right: 15,
-                      bottom: 15
+                      bottom: 25
                   }
                 },
                 scales: {
                   yAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: 'Level and Points'
+                      labelString: this.props.yAxisLabel
                     }
                   }],
                   xAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: 'Date'
+                      labelString: this.props.xAxisLabel
                     }
                   }],
                 } 
