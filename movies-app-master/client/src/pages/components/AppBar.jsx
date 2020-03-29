@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { fade, makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -17,8 +17,8 @@ import Button from '@material-ui/core/Button';
 
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-//import {AccountContext } from '.../';
-//const [state, setState] = useContext(AccountContext);
+import {AccountContext, AccountProvider} from '../../api/AcntContext';
+
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -181,66 +181,88 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={style}>
-        <Toolbar>
-          <img src={Logo} 
-            className={classes.menuButton}
-            height="25" width="25" />
-          <Typography className={classes.title} variant="h6" noWrap>
-            tacit
-          </Typography>
+    
+    <React.Fragment className={classes.grow}>
+      <AccountContext.Consumer>
+      
+       
+
+        
+        {user => (
           
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <Divider orientation="vertical" flexItem style={dividerStyles} />
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <Divider orientation="vertical" flexItem style={dividerStyles} />
-            <div style={textStyle}>
-              <Typography className={classes.Userl1} variant="h6">
-              User Profile
+          <AppBar position="static" style={style}>
+            <Toolbar>
+              <img src={Logo}
+                className={classes.menuButton}
+                height="25" width="25" />
+              <Typography className={classes.title} variant="h6" noWrap>
+                tacit
+          </Typography>
+
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <IconButton aria-label="show 4 new mails" color="inherit">
+                  <Badge badgeContent={4} color="secondary">
+                    <MailIcon />
+                  </Badge>
+                </IconButton>
+                <Divider orientation="vertical" flexItem style={dividerStyles} />
+                <IconButton aria-label="show 17 new notifications" color="inherit">
+                  <Badge badgeContent={17} color="secondary">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <Divider orientation="vertical" flexItem style={dividerStyles} />
+                <div style={textStyle}>
+                  <Typography className={classes.Userl1} variant="h6">
+                    {user[0].name}
               </Typography>
-              <Typography className={classes.Userl2} variant="h6">
-              Jr Engineer
+                  <Typography className={classes.Userl2} variant="h6">
+                    {/* Jr Engineer */} Rank - {user[0].rank}
               </Typography>
-            </div>
-            
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+                </div>
+
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+              </div>
+              <div className={classes.sectionMobile}>
+                <IconButton
+
+                  aria-label="show more"
+                  aria-controls={mobileMenuId}
+                  aria-haspopup="true"
+                  onClick={handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </div>
+            </Toolbar>
+          </AppBar>
+
+        
+         
+   
+        )
+}
+{/* }{renderMenu}
+        {renderMobileMenu} */}
+        
+        
+       
+        
+      
+    
+        </AccountContext.Consumer>
+    </React.Fragment>
+    
   );
 }

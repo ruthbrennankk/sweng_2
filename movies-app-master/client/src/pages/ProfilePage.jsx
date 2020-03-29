@@ -9,15 +9,19 @@ import  AppBar  from './components/AppBar.jsx';
 import NoteTitleBar from './components/NoteTitleBar.jsx';
 import Tabs from './components/Tabs.jsx';
 import './ProfilePage.css';
-import {AccountContext} from '../api/AcntContext';
+import {AccountContext, AccountProvider} from '../api/AcntContext';
 
-const testName = "John Doe";
+var testuser;
 const testPoints = 0;
+var LoggedinUser;
+// function AssignContextValue(){
+//    [state, setState] = useContext(AccountContext);
+//   LoggedinUser = state;
+//   return LoggedinUser;
+// }
 
 
-const [state, setState] = useContext(AccountContext);
 
-const LoggedinUser = state[0];
 
 const componentsStyle = {
     display: 'flex',
@@ -25,6 +29,7 @@ const componentsStyle = {
 
 
 class ProfilePage extends Component {
+
     render() {
         return (
             <Grid>
@@ -33,17 +38,20 @@ class ProfilePage extends Component {
                 <Tabs></Tabs>
                 <Grid style={{flex: 1 }}>
                   <NoteTitleBar/>
+                  
                   <Grid>
+                  <AccountContext.Consumer>
+                    {user => (
+                      <h3>Hello Again, {user[0].name}</h3>
+                    )}
                   
     
-                    {/*----fill in screens here-----*/}
-                    
-                    testing Profile State 
-                    Profile Page
+                   
 
 
-                    
+                    </AccountContext.Consumer>
                     </Grid>
+                  
                 </Grid>
               </Grid>
           </Grid>

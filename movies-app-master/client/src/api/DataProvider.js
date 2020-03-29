@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import api from './index';
-import {AccountContext} from './AcntContext';
+import {AccountContext, AccountProvider} from './AcntContext';
+
+const Users = ([contextValue]) => {
+    //const contextValue = useContext(AccountContext);
+    const userData = contextValue[0];
+    return userData;
+}
 
 //Get User Articles
 function GetArticles(user){
@@ -20,9 +26,14 @@ function ViewedArticles(){
 }
 
 //Get User Points
-function GetRank(){
+function GetPoints(user){
+    return user.points;
 
 } 
+//Get User Rank
+function GetRank(){
+
+}
 
 //Get Total Article Views
 function GetTotalViews(){

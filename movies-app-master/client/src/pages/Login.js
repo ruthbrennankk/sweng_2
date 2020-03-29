@@ -8,6 +8,7 @@ import {AccountContext} from '../api/AcntContext';
 var email ;
 var password ;
 var count = 0;
+var stateCheck;
 export const Login = () => {
    
    
@@ -60,7 +61,8 @@ export const Login = () => {
       if(res.data.success === false){
         console.log("Email Incorrect Try Again");
         //window.alert('Email Incorect');
-        loginSuccess = false;
+       // loginSuccess = false;
+        logState = false;
       }else{
         //console.log(this.state);
         //console.log(res.data.data.name);
@@ -88,6 +90,8 @@ export const Login = () => {
         
           //DataForSignIn = res.data;
           logState = true;
+         stateCheck = true;
+
           
           
           //
@@ -127,55 +131,64 @@ export const Login = () => {
        
        
      
-        
-            <div className="App1">
-                <div className="App__Left1">
-                    <div className="SignInPage">
 
-                        <form onSubmit={HandleFormSubmit}>
-                            <div className="SignInField">
-                                <label className="SignIn__Label" htmlFor="email">
-                                    E-Mail Address</label>
-                                <input
-                                    type="text"
-                                    className="SignIn__Input"
-                                    placeholder="Enter your email"
-                                    name="email"
-                                    id="email"
-                                    value={email}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
+        <div className="App1">
+            <div className="App__Left1">
+                <div className="SignInPage">
 
-                            <div className="SignInField">
-                                <label className="SignIn__Label" htmlFor="password">
-                                    Password</label>
-                                <input
-                                    type="password"
-                                    id="password"
-                                    className="SignIn__Input"
-                                    placeholder="Enter your password"
-                                    name="password"
-                                    value={password}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
+                    <form onSubmit={HandleFormSubmit}>
+                        <div className="SignInField">
+                            <label className="SignIn__Label" htmlFor="email">
+                                E-Mail Address</label>
+                            <input
+                                type="text"
+                                className="SignIn__Input"
+                                placeholder="Enter your email"
+                                name="email"
+                                id="email"
+                                value={email}
+                                onChange={handleInputChange}
+                            />
+                        </div>
 
-
-                            <div className="SignInField">
-
-                                
-                                    <button className="SignIn__Button mr-20">Sign In</button>
-                              
+                        <div className="SignInField">
+                            <label className="SignIn__Label" htmlFor="password">
+                                Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                className="SignIn__Input"
+                                placeholder="Enter your password"
+                                name="password"
+                                value={password}
+                                onChange={handleInputChange}
+                            />
+                        </div>
 
 
+                        <div className="SignInField">
+                         
 
-                            </div>
-                        </form>
+                            {count>2 ? (
+                                console.log("Nav"),
+                                    <NavLink to="/home"><button className="SignIn__Button mr-20">Sign In</button></NavLink>
+                            ) : (
+                                console.log("Not Nav"),
+                                <button className="SignIn__Button mr-20">Sign In</button>
+                            )}
 
-                    </div>
+
+                            
+
+
+
+
+                        </div>
+                    </form>
+
                 </div>
             </div>
+        </div>
  
     );
 }
