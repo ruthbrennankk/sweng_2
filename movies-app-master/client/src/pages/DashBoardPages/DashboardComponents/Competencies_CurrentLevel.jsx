@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import LineGraph from "../../Graphs/LineGraph";
+import levelOne from "../../Images/levelOne.png";
+
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -46,6 +47,7 @@ export default function Competencies_CurrentLevel() {
           Your Top 5 Areas of Expertise - Levels
         </Typography>
         {/*Levels Stuff Here*/}
+        <img src={levelOne} alt="Level One"></img>
       </Grid>
     </Grid>
   );
