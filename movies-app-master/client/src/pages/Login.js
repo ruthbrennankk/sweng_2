@@ -124,7 +124,7 @@ export const Login = () => {
     console.log("Got Past it all");
 
     
-    //console.log(this.state);
+    
     };
 
     return(
