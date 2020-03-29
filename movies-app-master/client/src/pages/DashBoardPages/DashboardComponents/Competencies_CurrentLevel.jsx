@@ -45,15 +45,7 @@ export default function Competencies_CurrentLevel() {
         >
           Your Top 5 Areas of Expertise - Levels
         </Typography>
-        <LineGraph
-          data={graph.data}
-          labels={graph.labels}
-          displayLengend={false}
-          borderColour={"#9545d8"}
-          xAxisLabel={"Date"}
-          yAxisLabel={"Contributions"}
-          fill={true}
-        />
+        {/*Levels Stuff Here*/}
       </Grid>
     </Grid>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import LineGraph from "../../Graphs/LineGraph";
+import BarChart from "../../Graphs/BarChart";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -23,14 +23,14 @@ export default function Competencies_TopAreasOfExpertise() {
       <Typography className={classes.typographyColor} variant="h6" gutterBottom>
         {topAreasOfExpertise}
       </Typography>
-      <LineGraph
-        data={graph.data}
-        labels={graph.labels}
-        displayLengend={false}
-        borderColour={"#9545d8"}
-        xAxisLabel={"Date"}
-        yAxisLabel={"Level and Points"}
-        fill={true}
+      <BarChart
+          displayLegend = {false} 
+          data = {[65, 59, 80, 81]}
+          labels={["Jan", "Feb", "March","April"]} 
+          borderColour =  {"#fda54b"}
+          xAxisLabel = {'Date'}
+          yAxisLabel = {'Level and Points'}
+          backgroundColour = {'#fda54b'}
       />
     </Grid>
   );

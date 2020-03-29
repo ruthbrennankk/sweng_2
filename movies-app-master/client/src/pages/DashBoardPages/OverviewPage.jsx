@@ -66,7 +66,7 @@ export default function OverviewPage() {
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={10}>
             <ArticlesImpact />
-            <ArticlesRated />
+            <ArticlesRated legend={false}/>
           </Grid>
         </div>
       </Paper>
