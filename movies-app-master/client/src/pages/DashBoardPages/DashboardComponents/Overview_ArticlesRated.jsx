@@ -3,6 +3,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
+//graphs
+import Doughnut from "../../Graphs/Doughnut";
+
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
@@ -13,8 +16,7 @@ const useStyles = makeStyles(theme => ({
     "& > *": {
       margin: theme.spacing(1)
     }
-  },
-  
+  }
 }));
 
 const StyledButton = withStyles({
@@ -43,6 +45,26 @@ export default function Overview_ArticlesRated() {
       <div className={classes.root}>
         <StyledButton variant="outlined">+ Details</StyledButton>
       </div>
+      <Doughnut
+      
+        data={[65, 59, 80, 81]}
+        labels={["Jan", "Feb", "March", "April"]}
+        backgroundColor={[
+          "#75bf53",
+          "#fda54b",
+          "#e35245",
+          "#ffc400",
+          "#d9d9d9"
+        ]}
+        hoverBackgroundColor={[
+          "#539435",
+          "#f2820f",
+          "#c44a3f",
+          "#e3b109",
+          "#918e8e"
+        ]}
+        displayLegend={true}
+      />
     </Grid>
   );
 }
