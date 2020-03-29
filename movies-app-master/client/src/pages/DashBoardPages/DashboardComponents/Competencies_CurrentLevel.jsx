@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import levelOne from "../../Images/levelOne.png";
+import levelZero from "../../Images/levelZero.png";
 
 
 const useStyles = makeStyles(theme => ({
@@ -19,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     "& hr": {
       margin: theme.spacing(0, 5)
     }
-  }
+  },
+
 }));
 
 export default function Competencies_CurrentLevel() {
@@ -37,8 +39,12 @@ export default function Competencies_CurrentLevel() {
           gutterBottom
         >
           You current level
+          <div>
+          <img src={levelZero} alt="Level Zero"></img>
+          </div>
         </Typography>
         <Divider orientation="vertical" flexItem />
+        <Grid>
         <Typography
           className={classes.typographyColor}
           variant="subtitle2"
@@ -46,8 +52,17 @@ export default function Competencies_CurrentLevel() {
         >
           Your Top 5 Areas of Expertise - Levels
         </Typography>
-        {/*Levels Stuff Here*/}
+        </Grid>
+        <div>
         <img src={levelOne} alt="Level One"></img>
+        <img src={levelOne} alt="Level One"></img>
+        <img src={levelOne} alt="Level One"></img>
+        <img src={levelOne} alt="Level One"></img>
+
+        </div>
+        {/*Levels Stuff Here*/}
+        
+
       </Grid>
     </Grid>
   );
