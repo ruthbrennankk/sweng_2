@@ -16,24 +16,24 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ImgMediaCard() {
+export default function Impact_NoImpactCard() {
   const classes = useStyles();
-
   return (
     <div>
-      <Grid container justify="center" className={classes.GridRoot}>
-        <Card className={classes.root}>
-          <CardActionArea >
-            <SentimentVeryDissatisfiedIcon
-              style={{ fontSize: 100, color: "#9d8fbb" }}
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                You have not created any articles
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+      <Grid
+        item
+        xs
+        container
+        direction="column"
+        spacing={2}
+        alignItems="center"
+      >
+        <SentimentVeryDissatisfiedIcon
+          style={{ fontSize: 100, color: "#9d8fbb" }}
+        />
+        <Typography variant="body2" color="textSecondary">
+          You have not created any articles
+        </Typography>
       </Grid>
     </div>
   );

@@ -24,7 +24,6 @@ class ProfilePage extends Component {
               <Grid style={componentsStyle}>
                 <Tabs></Tabs>
                 <Grid style={{flex: 1 }}>
-                  <NoteTitleBar/>
                   <Grid>
     
                     {/*----fill in screens here-----*/}

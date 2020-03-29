@@ -1,7 +1,7 @@
 //Vertical Bar Chart Class
 
 //Graph Imports
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Chart from "chart.js";
 
 /*
@@ -13,59 +13,58 @@ import Chart from "chart.js";
 */
 
 export default class Doughnut extends Component {
-    chartRef = React.createRef();
-    
-    
-    componentDidMount() {
-        const myChartRef = this.chartRef.current.getContext("2d");
-        Chart.defaults.global.legend.display = this.props.displayLegend;
-        
-        new Chart(myChartRef, {
-            type: "doughnut",
-            data: {
-                //Bring in data
-                labels: this.props.labels,
-                datasets: [
-                    {
-                      // turle greenn, pale orange, pale red, marigold, white
-                      backgroundColor: this.props.backgroundColor,
-                      hoverBackgroundColor: this.props.hoverBackgroundColor,
-                      data: this.props.data
-                    }
-                  ]
-            },
-            options: {
-                //Customize chart options
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    xAxes: [{
-                        ticks: { display: false },
-                        gridLines: {
-                            display: false,
-                            drawBorder: false
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: { display: false },
-                        gridLines: {
-                            display: false,
-                            drawBorder: false
-                        }
-                    }]
-                }
-                                
+  chartRef = React.createRef();
+
+  componentDidMount() {
+    const myChartRef = this.chartRef.current.getContext("2d");
+    Chart.defaults.global.legend.display = this.props.displayLegend;
+
+    new Chart(myChartRef, {
+      type: "doughnut",
+      data: {
+        //Bring in data
+        labels: this.props.labels,
+        datasets: [
+          {
+            // turle greenn, pale orange, pale red, marigold, white
+            backgroundColor: this.props.backgroundColor,
+            hoverBackgroundColor: this.props.hoverBackgroundColor,
+            data: this.props.data
+          }
+        ]
+      },
+      options: {
+        //Customize chart options
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+          xAxes: [
+            {
+              ticks: { display: false },
+              gridLines: {
+                display: false,
+                drawBorder: false
+              }
             }
-        });
-    }
-    render() {
-        return (
-            <div>
-                <canvas
-                    id="myChart"
-                    ref={this.chartRef}
-                />
-            </div>
-        )
-    }
+          ],
+          yAxes: [
+            {
+              ticks: { display: false },
+              gridLines: {
+                display: false,
+                drawBorder: false
+              }
+            }
+          ]
+        }
+      }
+    });
+  }
+  render() {
+    return (
+      <div>
+        <canvas id="myChart" ref={this.chartRef} />
+      </div>
+    );
+  }
 }

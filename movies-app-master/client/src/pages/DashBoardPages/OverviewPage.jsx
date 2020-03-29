@@ -1,6 +1,6 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, styled } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -12,10 +12,6 @@ import ArticlesImpact from "./DashboardComponents/Overview_ArticlesImpact.jsx";
 import ArticlesRated from "./DashboardComponents/Overview_ArticlesRated.jsx";
 import Overview_LevelsAndPointsOvertime from "./DashboardComponents/Overview_LevelsAndPointsOvertime.jsx";
 import Overview_Contribution from "./DashboardComponents/Overview_Contribution.jsx";
-//Graphs 
-import LineGraph from "./../Graphs/LineGraph";
-import BarChart from "./../Graphs/BarChart";
-import Doughnut from "./../Graphs/Doughnut";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +20,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0, 3)
   },
   paper: {
-    maxWidth: 1080,
     margin: `${theme.spacing(5)}px auto`,
     padding: theme.spacing(10)
   },
@@ -36,18 +31,26 @@ const useStyles = makeStyles(theme => ({
   },
   part2: {
     marginTop: theme.spacing(5)
+  },
+  pageTitlePosition: {
+    marginTop: theme.spacing(3)
   }
 }));
 
+const ImpactTypography = styled(Typography)({
+  color: "#5a2a83",
+  fontSize: "2rem",
+  fontWeight: "bold"
+});
+
 export default function OverviewPage() {
   const classes = useStyles();
-  var graph = {
-    data: [65, 59, 80, 81, 56,300],
-    labels: ["Jan", "Feb", "March","April", "May", "June"],
-  }
 
   return (
     <div className={classes.root}>
+      <ImpactTypography className={classes.pageTitlePosition}>
+        Overview
+      </ImpactTypography>
       {/* //start of first section */}
       <Paper className={classes.paper}>
         {/* //first part of first section */}
@@ -58,21 +61,12 @@ export default function OverviewPage() {
             <ArticlesViewed />
           </Grid>
         </div>
-
         <Divider />
-
         {/* second part of first section */}
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={10}>
             <ArticlesImpact />
             <ArticlesRated />
-            <Doughnut
-                  data = {[65, 59, 80, 81]}
-                  labels={["Jan", "Feb", "March","April"]} 
-                  backgroundColor = {[ '#75bf53', '#fda54b','#e35245','#ffc400','#d9d9d9']}
-                  hoverBackgroundColor = { ['#539435', '#f2820f','#c44a3f', '#e3b109','#918e8e']}
-                  displayLegend = {true}
-            />
           </Grid>
         </div>
       </Paper>
@@ -82,32 +76,12 @@ export default function OverviewPage() {
           <Grid container wrap="nowrap" spacing={2}>
             <Overview_LevelsAndPointsOvertime />
           </Grid>
-          <LineGraph
-                    data = {graph.data}
-                    labels={graph.labels}
-                    displayLengend = {false}
-                    borderColour =  {"#9545d8"}
-                    xAxisLabel = {'Date'}
-                    yAxisLabel = {'Level and Points'}
-                    fill = {true}
-          />
         </div>
-
         <Divider />
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={2}>
             <Overview_Contribution />
           </Grid>
-          <LineGraph
-                    data = {graph.data}
-                    labels={graph.labels}
-                    displayLengend = {false}
-                    borderColour =  {"#9545d8"}
-                    xAxisLabel = {'Date'}
-                    yAxisLabel = {'Contributions'}
-                    fill = {true}
-          />
-          
         </div>
       </Paper>
     </div>

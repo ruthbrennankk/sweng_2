@@ -2,13 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import FormatAlignLeftIcon from "@material-ui/icons/FormatAlignLeft";
-import FormatAlignCenterIcon from "@material-ui/icons/FormatAlignCenter";
-import FormatAlignRightIcon from "@material-ui/icons/FormatAlignRight";
-import FormatBoldIcon from "@material-ui/icons/FormatBold";
-import FormatItalicIcon from "@material-ui/icons/FormatItalic";
-import FormatUnderlinedIcon from "@material-ui/icons/FormatUnderlined";
 import Divider from "@material-ui/core/Divider";
+import LineGraph from "../../Graphs/LineGraph";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -16,7 +11,6 @@ const useStyles = makeStyles(theme => ({
   },
   contributionOvertime: {
     width: "fit-content",
-
     "& svg": {
       margin: theme.spacing(1.5)
     },
@@ -30,7 +24,10 @@ const yourContribution = `Your contribution streak in the last 365 days`;
 
 export default function Overview_Contribution() {
   const classes = useStyles();
-
+  var graph = {
+    data: [65, 59, 80, 81, 56, 300],
+    labels: ["Jan", "Feb", "March", "April", "May", "June"]
+  };
   return (
     <Grid item xs>
       <Typography
@@ -40,12 +37,21 @@ export default function Overview_Contribution() {
       >
         {yourContribution}
       </Typography>
+      <LineGraph
+        data={graph.data}
+        labels={graph.labels}
+        displayLengend={false}
+        borderColour={"#9545d8"}
+        xAxisLabel={"Date"}
+        yAxisLabel={"Contributions"}
+        fill={true}
+      />
       <Grid
         container
         alignItems="stretch"
         className={classes.contributionOvertime}
-      >
         
+      >
         <Typography className={classes.typographyColor} variant="body1">
           Year of contributions
         </Typography>
