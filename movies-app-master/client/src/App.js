@@ -16,6 +16,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import SettingsPage from "./pages/SettingsPage.jsx";
 import ImpactPage from "./pages/DashBoardPages/ImpactPage.jsx";
 import Dash_ArticlesPage from "./pages/DashBoardPages/Dash_ArticlesPage.jsx";
+import Dash_ArticlesCreated from "./pages/DashBoardPages/DashboardComponents/Dash_ArticlesCreated.jsx";
 import CompetenciesPage from "./pages/DashBoardPages/CompetenciesPage.jsx";
 
 //import './App.css';
@@ -64,6 +65,7 @@ export default class App extends Component {
         <Route exact path="/dashboard/impact" component={ImpactPage}></Route>
         <Route exact path="/dashboard/articles" component={Dash_ArticlesPage}></Route>
         <Route exact path="/dashboard/competencies" component={CompetenciesPage}></Route>
+        <Route exact path="/dashboard/articlesCreated" component={Dash_ArticlesCreated}></Route>
       </Router>
     );
   }

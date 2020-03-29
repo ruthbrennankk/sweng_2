@@ -1,6 +1,6 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles, styled } from "@material-ui/core/styles";
+import { makeStyles, styled, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -10,6 +10,9 @@ import Tabs from "../components/Tabs.jsx";
 // Overview pages
 import Dash_ArticlesImpact from "./DashboardComponents/Dash_Articles_Impact.jsx";
 import Dash_ArticlesRated from "./DashboardComponents/Dash_Articles_Rated.jsx";
+
+import Dash_ArticlesRatedPage from "./DashboardComponents/Dash_ArticlesRatedPage.jsx";
+import Dash_ArticlesCreated from "./DashboardComponents/Dash_ArticlesCreated.jsx";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   part2: {
     marginTop: theme.spacing(5)
   },
-  pageTitlePosition:{
+  pageTitlePosition: {
     marginTop: theme.spacing(3)
   }
 }));
@@ -41,12 +44,6 @@ const MainTypography = styled(Typography)({
   fontSize: "2rem",
   fontWeight: "bold"
 });
-
-const SecondaryTypography = styled(Typography)({
-    color: "#5a2a83",
-    fontSize: "1.5rem",
-    fontWeight: "bold"
-  });
 
 const componentsStyle = {
   display: "flex"
@@ -62,24 +59,7 @@ export default function Dash_ArticlesPage() {
         <Tabs></Tabs>
         <Grid style={{ flex: 1 }}>
           <NoteTitleBar />
-          <div className={classes.root}>
-            <MainTypography className={classes.pageTitlePosition}>Articles Rated</MainTypography>
-            {/* //start of first section */}
-            <Paper className={classes.paper}>
-            <SecondaryTypography gutterBottom >Articles you rated</SecondaryTypography>
-              <div className={classes.part1}>
-                <Grid container wrap="nowrap" spacing={2}>
-                  <Dash_ArticlesRated />
-                </Grid>
-              </div>
-              <Divider />
-              <div className={classes.part2}>
-                <Grid container wrap="nowrap" spacing={2}>
-                  <Dash_ArticlesImpact />
-                </Grid>
-              </div>
-            </Paper>
-          </div>
+          <Dash_ArticlesRatedPage />
         </Grid>
       </Grid>
     </div>
