@@ -1,20 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MenuList, MenuItem, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+//import {AccountContext } from '../api/AcntContext';
 
 import NavigationBar from './components/NavigationBar.jsx';
 import  AppBar  from './components/AppBar.jsx';
 import NoteTitleBar from './components/NoteTitleBar.jsx';
 import Tabs from './components/Tabs.jsx';
 import './ProfilePage.css';
+import {AccountContext} from '../api/AcntContext';
 
 const testName = "John Doe";
 const testPoints = 0;
 
+
+const [state, setState] = useContext(AccountContext);
+
+const LoggedinUser = state[0];
+
 const componentsStyle = {
     display: 'flex',
   };
+
 
 class ProfilePage extends Component {
     render() {
@@ -26,11 +34,15 @@ class ProfilePage extends Component {
                 <Grid style={{flex: 1 }}>
                   <NoteTitleBar/>
                   <Grid>
+                  
     
                     {/*----fill in screens here-----*/}
-    
+                    
+                    testing Profile State 
                     Profile Page
-    
+
+
+                    
                     </Grid>
                 </Grid>
               </Grid>

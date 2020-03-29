@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import WelcomePage from './pages/WelcomePage.jsx';
 import SignInPage from './pages/SignInPage.js';
 
-//import Login from './pages/Login.js';
-//import UserContext from "./api/acnt-mang.js";
+import Login from './pages/Login.js';
+import {AccountProvider} from './api/AcntContext';
 
 import HomePage from './pages/HomePage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
@@ -49,13 +49,20 @@ const reducer = (state, action) => {
 };*/
 
 
+
 export default class Dashboard extends Component {
+  
   render() {
     return (
       <Router>
+        <AccountProvider>
+          
+        
+
         <Route exact path="/" component={WelcomePage}>
         </Route>
-        <Route exact path="/signin" component={SignInPage}>
+        <Route exact path="/signin" component={Login}>
+           {/* Need to be able to not allow further movement if not signed in*/ }
         </Route>
         <Route exact path="/home" component={HomePage}>
         </Route>
@@ -67,6 +74,9 @@ export default class Dashboard extends Component {
         </Route>
         <Route exact path="/settings" component={SettingsPage}>
         </Route>
+
+        </AccountProvider>
+        
 
       </Router>
     );

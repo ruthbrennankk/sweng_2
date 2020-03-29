@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import apis from '../api';
 import { NavLink } from 'react-router-dom';
+import {AccountContext} from '../api/AcntContext';
 
 
 
 import './SignInPage.css';
+
+var DataForSignIn;
+var logState;
+
 
 class SignInPage extends Component {
   constructor() {
@@ -30,11 +35,14 @@ class SignInPage extends Component {
       [name]: value
     });
   }
+  
+  
 
    
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    
     var email = '';
     email = this.state.email;
     
@@ -69,8 +77,18 @@ class SignInPage extends Component {
         console.log(res.data.data);
 
       }
+
      // resets state of text boxs depending on outcome of login attempt
       if(loginSuccess){
+        
+        DataForSignIn = res.data;
+        logState = true;
+       // Context.call(DataForSignIn);
+        
+
+
+
+
         this.setState({
           id: '',
           email: '',
@@ -88,6 +106,7 @@ class SignInPage extends Component {
       password: ''
       
     })
+    //logState = false;
 
     console.log("Got Past it all");
 
@@ -114,9 +133,9 @@ class SignInPage extends Component {
           </div>
 
           <div className="SignInField">
-            <NavLink to="/home">
+             <NavLink to="/home"> 
             <button className="SignIn__Button mr-20">Sign In</button>
-            </NavLink>
+             </NavLink> 
           </div>
         </form>
       
@@ -127,6 +146,25 @@ class SignInPage extends Component {
   }
   
 }
+
+function Context( res ){
+  ChangeContext(res)
+  return null;
+}
+function ChangeContext(res) {
+  const [loginState, state, setState] = useContext(AccountContext);
+  
+  setState(logState, res.data.data);
+  console.log(state.name);
+  console.log("Hello WOrld");
+  return null;
+
+}
+// if(logState === true){
+//   console.log("Got to Context");
+//   ChangeContext(DataForSignIn);
+// }
+
 
 
 export default SignInPage;
