@@ -7,7 +7,7 @@ import WelcomePage from "./pages/WelcomePage.jsx";
 import SignInPage from "./pages/SignInPage.js";
 
 import Login from './pages/Login.js';
-import {AccountProvider} from './api/AcntContext';
+import {AccountProvider, AccountContext} from './api/AcntContext';
 
 import HomePage from "./pages/HomePage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
@@ -51,44 +51,13 @@ const reducer = (state, action) => {
   }
 };*/
 
-<<<<<<< HEAD
-
-
-export default class Dashboard extends Component {
-  
-  render() {
-    return (
-      <Router>
-        <AccountProvider>
-          
-        
-
-        <Route exact path="/" component={WelcomePage}>
-        </Route>
-        <Route exact path="/signin" component={Login}>
-           {/* Need to be able to not allow further movement if not signed in*/ }
-        </Route>
-        <Route exact path="/home" component={HomePage}>
-        </Route>
-        <Route exact path="/dashboard" component={DashboardPage}>
-        </Route>
-        <Route exact path="/articles" component={ArticlesPage}>
-        </Route>
-        <Route exact path="/profile" component={ProfilePage}>
-        </Route>
-        <Route exact path="/settings" component={SettingsPage}>
-        </Route>
-
-        </AccountProvider>
-        
-
-=======
 export default class App extends Component {
   render() {
     return (
       <Router>
+        <AccountContext.Provider>
         <Route exact path="/" component={WelcomePage}></Route>
-        <Route exact path="/signin" component={SignInPage}></Route>
+        <Route exact path="/signin" component={Login}></Route>
         <Route exact path="/home" component={HomePage}></Route>
         <Route exact path="/dashboard" component={DashboardPage}></Route>
         <Route exact path="/articles" component={ArticlesPage}></Route>
@@ -98,7 +67,7 @@ export default class App extends Component {
         <Route exact path="/dashboard/articles" component={Dash_ArticlesPage}></Route>
         <Route exact path="/dashboard/competencies" component={CompetenciesPage}></Route>
         <Route exact path="/dashboard/articlesCreated" component={Dash_ArticlesCreated}></Route>
->>>>>>> master
+        </AccountContext.Provider>
       </Router>
     );
   }

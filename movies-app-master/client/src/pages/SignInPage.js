@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 import React, { Component, useContext } from 'react';
 import apis from '../api';
 import { NavLink } from 'react-router-dom';
 import {AccountContext} from '../api/AcntContext';
-=======
-import React, { Component } from "react";
-import apis from "../api";
-import { NavLink } from "react-router-dom";
->>>>>>> master
 
 import "./SignInPage.css";
 
@@ -43,12 +37,7 @@ class SignInPage extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-<<<<<<< HEAD
-    
-    var email = '';
-=======
     var email = "";
->>>>>>> master
     email = this.state.email;
 
     var loginSuccess = false;
@@ -82,30 +71,6 @@ class SignInPage extends Component {
           console.log("The User Account: ");
           console.log(res.data.data);
         }
-<<<<<<< HEAD
-        console.log('The User Account: ');
-        console.log(res.data.data);
-
-      }
-
-     // resets state of text boxs depending on outcome of login attempt
-      if(loginSuccess){
-        
-        DataForSignIn = res.data;
-        logState = true;
-       // Context.call(DataForSignIn);
-        
-
-
-
-
-        this.setState({
-          id: '',
-          email: '',
-          password: ''
-          
-        })
-=======
         // resets state of text boxs depending on outcome of login attempt
         if (loginSuccess) {
           this.setState({
@@ -116,20 +81,11 @@ class SignInPage extends Component {
         }
       })
       .catch(err => console.log(err));
->>>>>>> master
 
     this.setState({
-<<<<<<< HEAD
-      id: '',
-      password: ''
-      
-    })
-    //logState = false;
-=======
       id: "",
       password: ""
     });
->>>>>>> master
 
     console.log("Got Past it all");
 
@@ -139,26 +95,6 @@ class SignInPage extends Component {
   render() {
     return (
       <div className="SignInApp">
-<<<<<<< HEAD
-      <div className="SignInApp__Left">
-      <div className = "SignInPage"> 
-      
-        <form onSubmit={this.handleSubmit}>
-          <div className="SignInField">
-            <label className="SignIn__Label" htmlFor="email">E-Mail Address</label>
-            <input type="email" id="email" className="SignIn__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
-          </div>
-
-          <div className="SignInField">
-            <label className="SignIn__Label" htmlFor="password">Password</label>
-            <input type="password" id="password" className="SignIn__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
-          </div>
-
-          <div className="SignInField">
-             <NavLink to="/home"> 
-            <button className="SignIn__Button mr-20">Sign In</button>
-             </NavLink> 
-=======
         <div className="SignInApp__Left">
           <div className="SignInPage">
             <form onSubmit={this.handleSubmit}>
@@ -197,7 +133,6 @@ class SignInPage extends Component {
                 </NavLink>
               </div>
             </form>
->>>>>>> master
           </div>
         </div>
       </div>
@@ -205,27 +140,4 @@ class SignInPage extends Component {
   }
 }
 
-<<<<<<< HEAD
-function Context( res ){
-  ChangeContext(res)
-  return null;
-}
-function ChangeContext(res) {
-  const [loginState, state, setState] = useContext(AccountContext);
-  
-  setState(logState, res.data.data);
-  console.log(state.name);
-  console.log("Hello WOrld");
-  return null;
-
-}
-// if(logState === true){
-//   console.log("Got to Context");
-//   ChangeContext(DataForSignIn);
-// }
-
-
-
-=======
->>>>>>> master
 export default SignInPage;
