@@ -66,7 +66,7 @@ export default function App() {
   if (isUser) {
     return (
       <Router>
-        <AccountContext.Provider>
+        <AccountContext.Provider/>
         <Route exact path="/" component={WelcomePage}></Route>
         <Route exact path="/signin" component={Login}></Route>
         <Route exact path="/home" component={HomePage}></Route>
