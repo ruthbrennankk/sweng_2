@@ -51,7 +51,7 @@ export default function Overview_Contribution() {
         alignItems="stretch"
         className={classes.contributionOvertime}
       >
-        <Typography className={classes.typographyColor} variant="body1">
+        {/* <Typography className={classes.typographyColor} variant="body1">
           Year of contributions
         </Typography>
         <Divider orientation="vertical" flexItem />
@@ -61,7 +61,7 @@ export default function Overview_Contribution() {
         <Divider orientation="vertical" flexItem />
         <Typography className={classes.typographyColor} variant="body1">
           Current Streak
-        </Typography>
+        </Typography> */}
       </Grid>
     </Grid>
   );

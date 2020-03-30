@@ -23,14 +23,14 @@ export default function Impact_ImpactCard() {
         >
           Impact of the articles created by you
         </Typography>
-        <Divider orientation="vertical" flexItem />
+        {/* <Divider orientation="vertical" flexItem />
         <Typography
           className={classes.typographyColor}
           variant="subtitle2"
           gutterBottom
         >
           Sample text
-        </Typography>
+        </Typography> */}
       </Grid>
     </Grid>
   );

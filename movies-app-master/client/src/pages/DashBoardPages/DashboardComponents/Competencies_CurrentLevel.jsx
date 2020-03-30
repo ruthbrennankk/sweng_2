@@ -55,12 +55,14 @@ export default function Competencies_CurrentLevel() {
         </Grid>
         <div>
         <img src={levelOne} alt="Level One"></img>
+        
         <img src={levelOne} alt="Level One"></img>
         <img src={levelOne} alt="Level One"></img>
         <img src={levelOne} alt="Level One"></img>
 
         </div>
         {/*Levels Stuff Here*/}
+        
         
 
       </Grid>

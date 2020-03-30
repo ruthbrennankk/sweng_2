@@ -33,37 +33,46 @@ export const Login = () => {
             password = value;
         }
     };
+    console.log("Testing 1");
     
-    const [ {user: initstate = { name: "test",
-    email: "test",
-    password: "test",
-    isManagement: false,
-    rank: [0,0,0,0],
-    pointValue: [0,0,0,0],
-    pointValue: [0,0,0,0],
-    articlesCreated: [0],
-    articlesViewed: [0],
-    articleViews: [0],
-    articlesLikes: [0],
-    articleRelevanceRec: [0],
-    articlesImpactRatingRec: [0],
-    myArticlesLikes: [0],
-    myArticlesImpactRec: [0] }}, setState] = useContext(AccountContext);
-   const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
-    // if(count == 0){
-    //     console.log("Should only see this once");
-    //     setState(startState);
-
-    // }
+    //const [state, setState] = useContext(AccountContext);
+    console.log("Testing 2");
+  
+  //  const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
+     const [startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,}, setState] = useContext(AccountContext);
+    if(count == 0){
+        console.log("Should only see this once");
+        //setState()
+        // const [{ user: initstate = {
+        //     rank: [0, 0, 0, 0],
+        //     pointValue: [0, 0, 0, 0],
+        //     articlesCreated: [0, 0],
+        //     articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        //     articleViews: [0, 0, 0, 0],
+        //     articlesLikes: [0, 0, 0],
+        //     articleRelevanceRec: [0, 0, 0],
+        //     articlesImpactRatingRec: [0, 0, 0],
+        //     myArticlesLikes: [0, 0, 0],
+        //     myArticlesImpactRec: [0],
+        //     name: "test",
+        //     position: "test",
+        //     email: "test",
+        //     password: "test",
+        //     isManagement: false
+    
+        // } }, setState] = useContext(AccountContext);
+    }
+    console.log("Testing 3");
     count++;
    
-   
+    var data;
   const HandleFormSubmit = async (event) => {
         event.preventDefault();
 
     
     var loginSuccess = false;
     var tempEmail = email;
+    
 
     
     
@@ -86,10 +95,11 @@ export const Login = () => {
           console.log("Password incorrect.");
           loginSuccess = false;
         }
-        var data = res.data.data;
+        data = res.data.data;
         console.log('The User Account: ');
         console.log(res.data.data);
-        setState(res.data.data);
+        
+       // setState(res.data.data);
 
       }
 
@@ -106,6 +116,7 @@ export const Login = () => {
         }
       
     }).catch(err => console.log(err));
+   
     
     
       
@@ -113,12 +124,13 @@ export const Login = () => {
       
     
     //logState = false;
-    console.log(initstate.name);
+//    console.log(initstate.name);
     console.log("Got Past it all");
 
     
-    
+   
     };
+    //const[{user: initstate= {data}}, setState]= useContext(AccountContext);
 
     return(
        

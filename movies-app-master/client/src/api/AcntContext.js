@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import userModel from '..'
 
 const AccountContext = React.createContext([{
     

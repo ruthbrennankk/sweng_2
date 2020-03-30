@@ -37,17 +37,12 @@ class ProfilePage extends Component {
               <Grid style={componentsStyle}>
                 <Tabs></Tabs>
                 <Grid style={{flex: 1 }}>
-<<<<<<< HEAD
-                  <NoteTitleBar/>
-                  
-=======
->>>>>>> master
                   <Grid>
                   <AccountContext.Consumer>
-                    {user => (
-                      <h3>Hello Again, {user[0].name}</h3>
+                    {/* {user => (
+                      <h3>Hello Again, {user.name}</h3>
                     )}
-                  
+                   */}
     
                    
 

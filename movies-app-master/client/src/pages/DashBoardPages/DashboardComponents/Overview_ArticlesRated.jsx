@@ -50,22 +50,22 @@ export default function Overview_ArticlesRated() {
         <StyledButton>+ Details</StyledButton>
       </Grid>
       <Doughnut
-        data={[65, 59, 80, 81]}
-        labels={["Jan", "Feb", "March", "April"]}
-        backgroundColor={[
-          "#75bf53",
-          "#fda54b",
-          "#e35245",
-          "#ffc400",
-          "#d9d9d9"
-        ]}
-        hoverBackgroundColor={[
-          "#539435",
-          "#f2820f",
-          "#c44a3f",
-          "#e3b109",
-          "#918e8e"
-        ]}
+         data={[5, 12, 4, 32]}
+         labels={["Solved your problem", "Didn't solve your problem", "Partial solution to your problem", "Impact - not recorded"]}
+         backgroundColor={[
+           "#75bf53",
+           "#fda54b",
+           "#e35245",
+           "#d9d9d9",
+           "#d9d9d9"
+         ]}
+         hoverBackgroundColor={[
+           "#539435",
+           "#f2820f",
+           "#c44a3f",
+           "#e3b109",
+           "#918e8e"
+         ]}
         displayLegend={true}
       />
     </Grid>
