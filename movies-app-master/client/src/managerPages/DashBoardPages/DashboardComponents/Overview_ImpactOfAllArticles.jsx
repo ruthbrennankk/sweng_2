@@ -34,14 +34,44 @@ export default function Dash_ArticlesCreated_ListOfARticles() {
         gave the folllowing feedback.
       </Typography>
       <BarChart
-            displayLegend={false}
-            data={[65, 59, 80, 81]}
-            labels={["Jan", "Feb", "March", "April"]}
-            borderColour={"#fda54b"}
-            xAxisLabel={"Date"}
-            yAxisLabel={"Level and Points"}
-            backgroundColour={"#fda54b"}
-          />
+        displayLegend={false}
+        data={[19, 35, 22]}
+        labels={["Too basic", "Easy to comprehend", "Too hard to understand"]}
+        borderColour={"#fda54b"}
+        xAxisLabel={""}
+        yAxisLabel={"Comprehension"}
+        backgroundColour={"#9545d8"}
+      />
+
+      <BarChart
+        displayLegend={false}
+        data={[30, 16, 14]}
+        labels={["Not enough detail", "Right amount of detail", "Too much detial" ]}
+        borderColour={"#fda54b"}
+        xAxisLabel={""}
+        yAxisLabel={"Detail"}
+        backgroundColour={"#9545d8"}
+      />
+
+      <BarChart
+        displayLegend={false}
+        data={[30, 30, 26]}
+        labels={["Confusing", "Straight forward", "Too segmented"]}
+        borderColour={"#fda54b"}
+        xAxisLabel={""}
+        yAxisLabel={"Structure"}
+        backgroundColour={"#9545d8"}
+      />
+
+      <BarChart
+        displayLegend={false}
+        data={[28, 26, 20]}
+        labels={["Too short", "Just Right", "Too long"]}
+        borderColour={"#fda54b"}
+        xAxisLabel={"Articles"}
+        yAxisLabel={"Length"}
+        backgroundColour={"#9545d8"}
+      />
     </Grid>
   );
 }

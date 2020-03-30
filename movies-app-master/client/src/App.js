@@ -62,7 +62,7 @@ const reducer = (state, action) => {
 };*/
 
 export default function App() {
-  const isUser = true;
+  const isUser = false;
   if (isUser) {
     return (
       <Router>
