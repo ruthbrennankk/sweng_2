@@ -24,6 +24,7 @@ export default function Impact_ImpactCard() {
         >
           Impact of the articles created by you
         </Typography>
+
       </Grid>
       <Typography className={classes.pointsTypographyColor} variant="body1">
         Some of the people that stated that your articles partically solved 

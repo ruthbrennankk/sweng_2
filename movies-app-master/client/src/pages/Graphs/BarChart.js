@@ -45,7 +45,7 @@ export default class BarChart extends Component {
             options: {
                 //Customize chart options
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
                 layout: {
                   padding: {
                       top: 20,

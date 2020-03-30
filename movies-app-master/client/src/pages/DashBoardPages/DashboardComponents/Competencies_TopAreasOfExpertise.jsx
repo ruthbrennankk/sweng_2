@@ -25,11 +25,11 @@ export default function Competencies_TopAreasOfExpertise() {
       </Typography>
       <BarChart
           displayLegend = {false} 
-          data = {[65, 59, 80, 81]}
-          labels={["Jan", "Feb", "March","April"]} 
+          data = {[80, 77, 55, 30,20,10]}
+          labels={["Follow-up lab results", "Perform labratory investigations", "Calibrate labratory equipment","Perform product testing", "Prepare samples for testing"]} 
           borderColour =  {"#fda54b"}
-          xAxisLabel = {'Date'}
-          yAxisLabel = {'Level and Points'}
+          xAxisLabel = {'Points'}
+          yAxisLabel = {'Area'}
           backgroundColour = {'#fda54b'}
       />
     </Grid>

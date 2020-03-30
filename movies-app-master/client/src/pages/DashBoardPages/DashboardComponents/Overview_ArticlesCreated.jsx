@@ -34,7 +34,7 @@ export default function Overview_ArticlesCreated() {
       </Typography>
       <Typography variant="caption">{ViewsInTotal} views in total</Typography>
       <Typography variant="caption">
-        {problemsSolved} problems solved
+        {problemsSolved} problems solved      (Below average)
       </Typography>
       <Typography variant="caption">{problemsPartiallySolved} problems partially solved</Typography>
     </Grid>

@@ -186,13 +186,13 @@ export default function PrimarySearchAppBar() {
 
   return (
     
-    <React.Fragment className={classes.grow}>
-      <AccountContext.Consumer>
+    <div className={classes.grow}>
+      {/* <AccountContext.Consumer> */}
       
        
 
         
-        {user => (
+        {/* {user => ( */}
           
           <AppBar position="static" style={style}>
             <Toolbar>
@@ -219,10 +219,12 @@ export default function PrimarySearchAppBar() {
                 <Divider orientation="vertical" flexItem style={dividerStyles} />
                 <div style={textStyle}>
                   <Typography className={classes.Userl1} variant="h6">
-                    {user[0].name}
+                    {/* {user[0].name} */}
+                    Lucy Byrne
               </Typography>
                   <Typography className={classes.Userl2} variant="h6">
-                    {user[0].position}
+                    {/* {user[0].position} */}
+                    Junior Engineer
               </Typography>
                 </div>
 
@@ -255,18 +257,18 @@ export default function PrimarySearchAppBar() {
         
          
    
-        )
-}
-{/* }{renderMenu}
-        {renderMobileMenu} */}
+        {/* )
+} */}
+{/* } */}{renderMenu}
+        {renderMobileMenu}
         
         
        
         
       
     
-        </AccountContext.Consumer>
-    </React.Fragment>
+        {/* </AccountContext.Consumer> */}
+    </div>
     
   );
 }

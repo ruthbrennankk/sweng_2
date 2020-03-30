@@ -33,6 +33,7 @@ export default function Impact_ImpactCard() {
   const classes = useStyles();
   return (
     <Grid item xs container direction="row" spacing={2}>
+      
       {/* first column */}
       {/* first column */}
       {/* first column */}
@@ -45,6 +46,7 @@ export default function Impact_ImpactCard() {
           >
             Top 10 Articles
           </Typography>
+          
 
           <Typography
             className={classes.typographyColor}
@@ -53,12 +55,16 @@ export default function Impact_ImpactCard() {
           >
             - solved a problem
           </Typography>
+          
           <NavLink to to="/" style={{ textDecoration: "none" }}>
             <StyledButton>
+              
               <VisibilityOutlinedIcon /> View Full List
             </StyledButton>
           </NavLink>
+          
         </Grid>
+        
         {/* continue code for first column here */}
         {/* continue code for first column here */}
         {/* continue code for first column here */}

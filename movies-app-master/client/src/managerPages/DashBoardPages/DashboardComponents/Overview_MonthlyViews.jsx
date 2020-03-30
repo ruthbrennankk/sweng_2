@@ -22,10 +22,10 @@ const PeriodTypography = styled(Typography)({
   fontWeight: "bold"
 });
 
-let usersNo = 0;
+let usersNo = 153;
 
-let articlesCreatedThisPeriod = 0;
-let ViewsInTotal = 0;
+let articlesCreatedThisPeriod = 2;
+let ViewsInTotal = 1.3;
 let problemsSolved = 0;
 let problemsPartiallySolved = 0;
 let mostTimeViewed = `23rd and 30th of January`;
@@ -50,15 +50,15 @@ export default function Overview_MonthlyViews() {
       <PeriodTypography>
         Collaborate with a techical staff in TelcoMax
       </PeriodTypography>
-      <Typography> {usersNo} have achived level 10 this month</Typography>
-      <Typography> Down {usersNo} users from last month</Typography>
+      <Typography> 14 have achived level 10 this month</Typography>
+      <Typography> Down {5} users from last month</Typography>
       <div className={classes.part2}>
         <ArticleComponentsTypography
           className={classes.typographyColor}
           variant="h5"
           gutterBottom
         >
-          {usersNo} Inactive Users
+          {23} Inactive Users
         </ArticleComponentsTypography>
       </div>
     </Grid>

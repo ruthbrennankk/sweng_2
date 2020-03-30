@@ -24,10 +24,11 @@ const PeriodTypography = styled(Typography)({
   fontWeight: "bold"
 });
 
-let articlesNo = 0;
+let articlesNo = 657;
+let articlesNoViews = 151;
 
-let articlesCreatedThisPeriod = 0;
-let ViewsInTotal = 0;
+let articlesCreatedThisPeriod = 20;
+let ViewsInTotal = 54;
 let problemsSolved = 0;
 let problemsPartiallySolved = 0;
 let mostTimeViewed = `23rd and 30th of January`;
@@ -58,7 +59,7 @@ export default function Overview_ArticlesCreated() {
           variant="h5"
           gutterBottom
         >
-          {articlesNo} Articles Created
+          {articlesNo} Monthhly Articles
         </ArticleComponentsTypography>
         <NavLink to to="/" style={{ textDecoration: "none" }}>
           <StyledButton>+ Details</StyledButton>
@@ -79,7 +80,7 @@ export default function Overview_ArticlesCreated() {
           variant="h5"
           gutterBottom
         >
-          {articlesNo} Monthly Views
+          151,330 Monthly Views
         </ArticleComponentsTypography>
         <Typography>
           {mostTimeViewed} were when the most amount of articles were viewed

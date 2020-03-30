@@ -10,13 +10,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const levelsAndPointsOverTime = `Levels and points over time`;
+const levelsAndPointsOverTime = `Points over time`;
 
 export default function Overview_LevelsAndPointsOvertime() {
   const classes = useStyles();
   var graph = {
-    data: [65, 59, 80, 81, 56, 300],
-    labels: ["Jan", "Feb", "March", "April", "May", "June"]
+    data: [54, 300, 1667, 735],
+    labels: ["Jan", "Feb", "March", "April"]
   };
   return (
     <Grid item xs>
@@ -29,7 +29,7 @@ export default function Overview_LevelsAndPointsOvertime() {
             displayLengend={false}
             borderColour={"#9545d8"}
             xAxisLabel={"Date"}
-            yAxisLabel={"Level and Points"}
+            yAxisLabel={"Points"}
             fill={true}
           />
     </Grid>

@@ -40,8 +40,8 @@ export default function Overview_Contribution() {
       </Typography>
       <BarChart
             displayLegend = {false} 
-            data = {[65, 59, 80, 81]}
-            labels={["Number or Articles you viewed", "Number of articles to which you stated were relevant to your search or query", "March","April"]} 
+            data = {[53, 12, 2, 39,12,1,40,5,12,4]}
+            labels={["Number or Articles you viewed","Number of articles you liked","Number of articles which you disliked","Like/dislike-not recorded","Number of articles to which you stated were irrelevant to your search query", "Number of articles to which you stated were relevant to your search query","Relevance - not recorded","Number of articles to solve your problem","Number of articles to not solve your problem","Number of articles to partially solve your problem" ]} 
             borderColour =  {"#9545d8"}
             xAxisLabel = {'Solution Seeker Input'}
             yAxisLabel = {'Articles Rated'}

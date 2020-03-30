@@ -56,12 +56,12 @@ export default function Competencies_CurrentLevel() {
         {/* continue code for first column here */}
         <BarChart
           displayLegend={false}
-          data={[65, 59, 80, 81]}
-          labels={["Jan", "Feb", "March", "April"]}
+          data={[160, 39,39,39,39,39,38,38,37,37,37,36,36,36,36]}
+          labels={["No Category", "Assist in the", "Decide on the type", "Establish", "Execute","Impart business","Collaborate in the","Collaborate to","Collaborate with a","Collaborate with","Collaborate on ", "Conduct routine","Apply safety","Develop a","Communicate"]}
           borderColour={"#fda54b"}
-          xAxisLabel={"Date"}
-          yAxisLabel={"Level and Points"}
-          backgroundColour={"#fda54b"}
+          xAxisLabel={"Number of articles to contain specific expert area"}
+          yAxisLabel={"Expert Areas"}
+          backgroundColour={"#4285f4"}
         />
         <NavLink to to="/" style={{ textDecoration: "none" }}>
           <StyledButton>+ Load More</StyledButton>
@@ -87,12 +87,12 @@ export default function Competencies_CurrentLevel() {
         {/* continue code for second column here */}
         <BarChart
           displayLegend={false}
-          data={[65, 59, 80, 81]}
-          labels={["Jan", "Feb", "March", "April"]}
+          data={[16500, 13500, 9000, 8100, 8000, 6400]}
+          labels={["Bradford Hamilton", "Muirin Micheal", "Emory Mcfee", "Rhett Banks","Clem MacQueen","Luvinia Carmody"]}
           borderColour={"#fda54b"}
-          xAxisLabel={"Date"}
-          yAxisLabel={"Level and Points"}
-          backgroundColour={"#fda54b"}
+          xAxisLabel={"Points"}
+          yAxisLabel={"Name"}
+          backgroundColour={"#5a2a83"}
         />
       </Grid>
     </Grid>

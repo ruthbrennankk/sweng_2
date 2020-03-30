@@ -59,7 +59,7 @@ export default class Dashboard extends Component {
             />
               <BarChart
                   displayLegend = {false} 
-                  data = {[65, 59, 80, 81]}
+                  data = {[65, 59, 80, 83]}
                   labels={["Jan", "Feb", "March","April"]} 
                   borderColour =  {"#9545d8"}
                   xAxisLabel = {'Date'}

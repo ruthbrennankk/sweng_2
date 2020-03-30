@@ -43,13 +43,15 @@ export default function Dash_Articles_Rated() {
         {articlesYouRated}
       </Typography>
       <Doughnut
-        data={[65, 59, 80, 81]}
-        labels={["Jan", "Feb", "March", "April"]}
+       
+        
+        data={[5, 12, 4, 32]}
+        labels={["Number of articles to solve your problem", "Number of articles to not solve your problem", "Number of articles to partially solve your problem", "Impact - not recorded"]}
         backgroundColor={[
           "#75bf53",
           "#fda54b",
           "#e35245",
-          "#ffc400",
+          "#d9d9d9",
           "#d9d9d9"
         ]}
         hoverBackgroundColor={[

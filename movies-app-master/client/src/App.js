@@ -68,7 +68,7 @@ export default function App() {
       <Router>
         <AccountContext.Provider/>
         <Route exact path="/" component={WelcomePage}></Route>
-        <Route exact path="/signin" component={Login}></Route>
+        <Route exact path="/signin" component={SignInPage}></Route>
         <Route exact path="/home" component={HomePage}></Route>
         <Route exact path="/dashboard" component={DashboardPage}></Route>
         <Route exact path="/articles" component={ArticlesPage}></Route>
@@ -90,11 +90,13 @@ export default function App() {
           path="/dashboard/articlesCreated"
           component={Dash_ArticlesCreated}
         ></Route>
+        </AccountContext.Provider>
       </Router>
     );
   } else {
     return (
       <Router>
+        <AccountContext.Provider>
         <Route exact path="/" component={WelcomePage}></Route>
         <Route exact path="/signin" component={SignInPage}></Route>
         <Route exact path="/home" component={HomePageManager}></Route>
@@ -114,6 +116,7 @@ export default function App() {
           path="/dashboard/competencies"
           component={CompetenciesPageManager}
         ></Route>
+        </AccountContext.Provider>
       </Router>
     );
   }
