@@ -10,9 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const levelsAndPointsOverTime = `Levels and points over time`;
-
-export default function Overview_LevelsAndPointsOvertime() {
+export default function Dash_ArticlesCreated_Views() {
   const classes = useStyles();
   var graph = {
     data: [65, 59, 80, 81, 56, 300],
@@ -20,18 +18,18 @@ export default function Overview_LevelsAndPointsOvertime() {
   };
   return (
     <Grid item xs>
-      <Typography className={classes.typographyColor} variant="subtitle2">
-        {levelsAndPointsOverTime}
+      <Typography className={classes.typographyColor} variant="h6" gutterBottom>
+        Views
       </Typography>
       <LineGraph
-            data={graph.data}
-            labels={graph.labels}
-            displayLengend={false}
-            borderColour={"#9545d8"}
-            xAxisLabel={"Date"}
-            yAxisLabel={"Level and Points"}
-            fill={true}
-          />
+        data={graph.data}
+        labels={graph.labels}
+        displayLengend={false}
+        borderColour={"#9545d8"}
+        xAxisLabel={"Date"}
+        yAxisLabel={"Level and Points"}
+        fill={true}
+      />
     </Grid>
   );
 }

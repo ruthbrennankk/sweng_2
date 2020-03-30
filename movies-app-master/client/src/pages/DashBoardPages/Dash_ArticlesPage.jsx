@@ -1,15 +1,18 @@
-import React, { Component } from "react";
-import { makeStyles, styled } from "@material-ui/core/styles";
-import NoImpact from "./DashboardComponents/Impact_NoImpactCard.jsx";
-import Impact from "./DashboardComponents/Impact_ImpactCard.jsx";
+import React from "react";
 import Paper from "@material-ui/core/Paper";
-
+import { makeStyles, styled, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 import AppBar from "../components/AppBar.jsx";
 import NoteTitleBar from "../components/NoteTitleBar.jsx";
 import Tabs from "../components/Tabs.jsx";
+// Overview pages
+import Dash_ArticlesImpact from "./DashboardComponents/Dash_Articles_Impact.jsx";
+import Dash_ArticlesRated from "./DashboardComponents/Dash_Articles_Rated.jsx";
 
-import Typography from "@material-ui/core/Typography";
+import Dash_ArticlesRatedPage from "./DashboardComponents/Dash_ArticlesRatedPage.jsx";
+import Dash_ArticlesCreated from "./DashboardComponents/Dash_ArticlesCreated.jsx";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   paper: {
     //hard coded value
     margin: `${theme.spacing(5)}px auto`,
-    padding: theme.spacing(5)
+    padding: theme.spacing(10)
   },
   typographyColor: {
     color: "#48236a"
@@ -36,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ImpactTypography = styled(Typography)({
+const MainTypography = styled(Typography)({
   color: "#5a2a83",
   fontSize: "2rem",
   fontWeight: "bold"
@@ -46,10 +49,9 @@ const componentsStyle = {
   display: "flex"
 };
 
-export default function ImpactPage() {
+export default function Dash_ArticlesPage() {
   const classes = useStyles();
-  //if false noImpact card is displayed. otherwise stats are displayed
-  const hasArticles = true;
+
   return (
     <div>
       <AppBar></AppBar>
@@ -57,16 +59,7 @@ export default function ImpactPage() {
         <Tabs></Tabs>
         <Grid style={{ flex: 1 }}>
           <NoteTitleBar />
-          <div className={classes.root}>
-            <ImpactTypography className={classes.pageTitlePosition}>
-              Impact
-            </ImpactTypography>
-            <Paper className={classes.paper}>
-              <div className={classes.part1}>
-                {hasArticles ? <Impact /> : <Impact />}
-              </div>
-            </Paper>
-          </div>
+          <Dash_ArticlesRatedPage />
         </Grid>
       </Grid>
     </div>

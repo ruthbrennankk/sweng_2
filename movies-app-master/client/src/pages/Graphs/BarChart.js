@@ -6,13 +6,23 @@ import Chart from "chart.js";
 
 //import classes from "./LineGraph.module.css";
 
+/*
+    displayLegend : Boolean 
+    data : Integer Array 
+    labels : String Array 
+    borderColour : String formatted "#9545d8" 
+    backgroundColour : String formatted as above
+    xAxisLabel : String eg 'Date'
+    yAxisLabel : String eg 'Time'
+*/
+
 export default class BarChart extends Component {
     chartRef = React.createRef();
     
     
     componentDidMount() {
         const myChartRef = this.chartRef.current.getContext("2d");
-        Chart.defaults.global.legend.display = false;
+        Chart.defaults.global.legend.display = this.props.displayLegend;
         
         new Chart(myChartRef, {
             type: "horizontalBar",
@@ -24,8 +34,8 @@ export default class BarChart extends Component {
                         //label: "Sales",
                         data: this.props.data,
                         //fill: "#e5d8f0",
-                        borderColor: "#9545d8",
-                        backgroundColor: "#9545d8",
+                        borderColor: this.props.borderColour,
+                        backgroundColor: this.props.backgroundColour,
                         
 
                         
@@ -48,13 +58,13 @@ export default class BarChart extends Component {
                   yAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: 'Level and Points'
+                      labelString: this.props.yAxisLabel
                     }
                   }],
                   xAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: 'Date'
+                      labelString: this.props.xAxisLabel
                     }
                   }],
                 } 

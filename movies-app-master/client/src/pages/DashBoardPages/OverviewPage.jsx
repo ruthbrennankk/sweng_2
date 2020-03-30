@@ -1,6 +1,6 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, styled } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -20,9 +20,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0, 3)
   },
   paper: {
-    maxWidth: 1080,
     margin: `${theme.spacing(5)}px auto`,
-    padding: theme.spacing(10)
+    padding: theme.spacing(5)
   },
   typographyColor: {
     color: "#48236a"
@@ -32,14 +31,26 @@ const useStyles = makeStyles(theme => ({
   },
   part2: {
     marginTop: theme.spacing(5)
+  },
+  pageTitlePosition: {
+    marginTop: theme.spacing(3)
   }
 }));
+
+const ImpactTypography = styled(Typography)({
+  color: "#5a2a83",
+  fontSize: "2rem",
+  fontWeight: "bold"
+});
 
 export default function OverviewPage() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+      <ImpactTypography className={classes.pageTitlePosition}>
+        Overview
+      </ImpactTypography>
       {/* //start of first section */}
       <Paper className={classes.paper}>
         {/* //first part of first section */}
@@ -50,14 +61,12 @@ export default function OverviewPage() {
             <ArticlesViewed />
           </Grid>
         </div>
-
         <Divider />
-
         {/* second part of first section */}
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={10}>
             <ArticlesImpact />
-            <ArticlesRated />
+            <ArticlesRated legend={false}/>
           </Grid>
         </div>
       </Paper>
@@ -68,7 +77,6 @@ export default function OverviewPage() {
             <Overview_LevelsAndPointsOvertime />
           </Grid>
         </div>
-
         <Divider />
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={2}>

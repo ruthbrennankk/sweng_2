@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import LineGraph from "../../Graphs/LineGraph";
+import BarChart from "../../Graphs/BarChart";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
   },
   contributionOvertime: {
     width: "fit-content",
+
     "& svg": {
       margin: theme.spacing(1.5)
     },
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const yourContribution = `Your contribution streak in the last 365 days`;
+const articlesRated = `Articles Rated`;
 
 export default function Overview_Contribution() {
   const classes = useStyles();
@@ -35,35 +36,22 @@ export default function Overview_Contribution() {
         variant="subtitle2"
         gutterBottom
       >
-        {yourContribution}
+        {articlesRated}
       </Typography>
-      <LineGraph
-        data={graph.data}
-        labels={graph.labels}
-        displayLengend={false}
-        borderColour={"#9545d8"}
-        xAxisLabel={"Date"}
-        yAxisLabel={"Contributions"}
-        fill={true}
-      />
+      <BarChart
+            displayLegend = {false} 
+            data = {[65, 59, 80, 81]}
+            labels={["Number or Articles you viewed", "Number of articles to which you stated were relevant to your search or query", "March","April"]} 
+            borderColour =  {"#9545d8"}
+            xAxisLabel = {'Solution Seeker Input'}
+            yAxisLabel = {'Articles Rated'}
+            backgroundColour = {'#fda54b'}
+        />
       <Grid
         container
         alignItems="stretch"
         className={classes.contributionOvertime}
-        
-      >
-        <Typography className={classes.typographyColor} variant="body1">
-          Year of contributions
-        </Typography>
-        <Divider orientation="vertical" flexItem />
-        <Typography className={classes.typographyColor} variant="body1">
-          Longest Streak
-        </Typography>
-        <Divider orientation="vertical" flexItem />
-        <Typography className={classes.typographyColor} variant="body1">
-          Current Streak
-        </Typography>
-      </Grid>
+      ></Grid>
     </Grid>
   );
 }

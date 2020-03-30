@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import { MenuList, MenuItem } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
+import { MenuList, MenuItem } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-import WelcomePage from './pages/WelcomePage.jsx';
-import SignInPage from './pages/SignInPage.js';
+import WelcomePage from "./pages/WelcomePage.jsx";
+import SignInPage from "./pages/SignInPage.js";
 
 import Login from './pages/Login.js';
 import {AccountProvider} from './api/AcntContext';
 
-import HomePage from './pages/HomePage.jsx';
-import DashboardPage from './pages/DashboardPage.jsx';
-import ArticlesPage from './pages/ArticlesPage.jsx';
-import ProfilePage from './pages/ProfilePage.jsx';
-import SettingsPage from './pages/SettingsPage.jsx';
-
+import HomePage from "./pages/HomePage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import ArticlesPage from "./pages/ArticlesPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
+import SettingsPage from "./pages/SettingsPage.jsx";
+import ImpactPage from "./pages/DashBoardPages/ImpactPage.jsx";
+import Dash_ArticlesPage from "./pages/DashBoardPages/Dash_ArticlesPage.jsx";
+import Dash_ArticlesCreated from "./pages/DashBoardPages/DashboardComponents/Dash_ArticlesCreated.jsx";
+import CompetenciesPage from "./pages/DashBoardPages/CompetenciesPage.jsx";
 
 //import './App.css';
 /*export const AuthContext = React.createContext();
@@ -48,6 +51,7 @@ const reducer = (state, action) => {
   }
 };*/
 
+<<<<<<< HEAD
 
 
 export default class Dashboard extends Component {
@@ -78,8 +82,24 @@ export default class Dashboard extends Component {
         </AccountProvider>
         
 
+=======
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Route exact path="/" component={WelcomePage}></Route>
+        <Route exact path="/signin" component={SignInPage}></Route>
+        <Route exact path="/home" component={HomePage}></Route>
+        <Route exact path="/dashboard" component={DashboardPage}></Route>
+        <Route exact path="/articles" component={ArticlesPage}></Route>
+        <Route exact path="/profile" component={ProfilePage}></Route>
+        <Route exact path="/settings" component={SettingsPage}></Route>
+        <Route exact path="/dashboard/impact" component={ImpactPage}></Route>
+        <Route exact path="/dashboard/articles" component={Dash_ArticlesPage}></Route>
+        <Route exact path="/dashboard/competencies" component={CompetenciesPage}></Route>
+        <Route exact path="/dashboard/articlesCreated" component={Dash_ArticlesCreated}></Route>
+>>>>>>> master
       </Router>
     );
   }
 }
-
