@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -22,33 +21,27 @@ const useStyles = makeStyles(theme => ({
 
 const StyledButton = withStyles({
   root: {
-    //hardcoded code
-    marginLeft: "400px",
-    background: "linear-gradient(45deg, #5a2a83 30%, #9545d8 90%)",
     borderRadius: 3,
     border: 0,
-    color: "white",
-    height: 35,
-    padding: "0 20px"
+    color: "#9545d8",
+    height: 48,
+    padding: "0 30px"
   },
   label: {
     textTransform: "capitalize"
   }
 })(Button);
 
-const articlesYouRated = `Articles you rated`;
+const articlesYouRated = `How you rated the impact on articles you viewed`;
 
-export default function Overview_ArticlesRated() {
+export default function Dash_Articles_Rated() {
   const classes = useStyles();
 
   return (
     <Grid item xs container direction="column" spacing={2}>
-      <Grid item xs container direction="row" spacing={2}>
-        <Typography className={classes.typographyColor} variant="subtitle2">
-          {articlesYouRated}
-        </Typography>
-        <StyledButton>+ Details</StyledButton>
-      </Grid>
+      <Typography className={classes.typographyColor} variant="subtitle2" gutterBottom>
+        {articlesYouRated}
+      </Typography>
       <Doughnut
         data={[65, 59, 80, 81]}
         labels={["Jan", "Feb", "March", "April"]}

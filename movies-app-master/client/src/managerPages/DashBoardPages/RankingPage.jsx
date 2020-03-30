@@ -1,17 +1,20 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles, styled, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import AppBar from "../../components/AppBar.jsx";
-import NoteTitleBar from "../../components/NoteTitleBar.jsx";
-import Tabs from "../../components/Tabs.jsx";
-// Overview pages
-import Dash_ArticlesCreated_ListOfARticles from "./Dash_ArticlesCreated_ListOfArticles.jsx";
-import Dash_ArticlesCreated_Views from "./Dash_ArticlesCreated_Views.jsx";
-import Dash_ArticlesCreated_YourArticles from "./Dash_ArticlesCreated_YourArticles.jsx";
+import Divider from "@material-ui/core/Divider";
+import AppBar from "../components/AppBar.jsx";
+import NoteTitleBar from "../components/NoteTitleBar.jsx";
+import Tabs from "../components/Tabs.jsx";
 import Button from "@material-ui/core/Button";
+
+import Dash_ArticlesCreated_ListOfARticles from "./DashboardComponents/Dash_ArticlesCreated_ListOfArticles.jsx";
+import Dash_ArticlesCreated_ArticlesInReview from "./DashboardComponents/Dash_ArticlesCreated_ArticlesInReview.jsx";
+import Ranking_MonthlyCreated from "./DashboardComponents/Ranking_MonthlyCreated.jsx";
+import Ranking_MonthlyRated from "./DashboardComponents/Ranking_MonthlyRated.jsx";
+import Ranking_Contributors from "./DashboardComponents/Ranking_Contributors.jsx";
+import Ranking_RankingContributors from "./DashboardComponents/Ranking_RankingContributors.jsx";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -93,7 +96,7 @@ const StyledButton = withStyles({
   }
 })(Button);
 
-export default function Dash_ArticlesCreated() {
+export default function Dash_ArticlesPage() {
   const classes = useStyles();
 
   return (
@@ -111,52 +114,25 @@ export default function Dash_ArticlesCreated() {
               justify="space-between"
             >
               <MainTypography className={classes.pageTitlePosition}>
-                Articles Created
+                Ranking
               </MainTypography>
-              <NavLink
-                to
-                to="/dashboard/articles"
-                style={{ textDecoration: "none" }}
-              >
-                <StyledButton>Articles Rated</StyledButton>
-              </NavLink>
             </Grid>
             <Paper className={classes.paper1}>
-              <Grid item direction="row">
-                <ArticleComponentsTypography>
-                  Monthly Articles
-                </ArticleComponentsTypography>
-                <PeriodTypography>time test</PeriodTypography>
-                <Typography>
-                  was when the most amount of articles were created.
-                </Typography>
-              </Grid>
+              <Ranking_MonthlyCreated />
             </Paper>
             <Paper className={classes.paper1}>
-              <Grid item direction="row">
-                <ArticleComponentsTypography>
-                  Monthly Views
-                </ArticleComponentsTypography>
-                <PeriodTypography>time test</PeriodTypography>
-                <Typography>
-                  was when the most amount of articles were viewed.
-                </Typography>
-              </Grid>
+              <Ranking_MonthlyRated />
             </Paper>
           </Grid>
           <Grid className={classes.root}>
             <Paper className={classes.paper2}>
-              <Dash_ArticlesCreated_ListOfARticles />
+              <Ranking_Contributors />
             </Paper>
           </Grid>
-          <Grid className={classes.root}>
-            <Paper className={classes.paper3}>
-              <Dash_ArticlesCreated_Views />
-            </Paper>
-          </Grid>
+
           <Grid className={classes.root}>
             <Paper className={classes.paper4}>
-              <Dash_ArticlesCreated_YourArticles />
+              <Ranking_RankingContributors />
             </Paper>
           </Grid>
         </Grid>
