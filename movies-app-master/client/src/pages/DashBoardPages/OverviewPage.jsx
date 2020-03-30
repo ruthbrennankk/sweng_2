@@ -65,8 +65,10 @@ export default function OverviewPage() {
         {/* second part of first section */}
         <div className={classes.part2}>
           <Grid container wrap="nowrap" spacing={10}>
-            <ArticlesImpact />
-            <ArticlesRated legend={false}/>
+            <Grid item xs justify="center" spacing={10}>
+              <ArticlesImpact />
+            </Grid>
+            <ArticlesRated legend={false} />
           </Grid>
         </div>
       </Paper>
