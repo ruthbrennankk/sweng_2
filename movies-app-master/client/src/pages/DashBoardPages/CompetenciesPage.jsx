@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   paper: {
     //hard coded value
     margin: `${theme.spacing(5)}px auto`,
-    padding: theme.spacing(10)
+    padding: theme.spacing(5)
   },
   typographyColor: {
     color: "#48236a"
