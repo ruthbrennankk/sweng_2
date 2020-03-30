@@ -1,8 +1,13 @@
-import React, { Component } from "react";
-import apis from "../api";
-import { NavLink } from "react-router-dom";
+import React, { Component, useContext } from 'react';
+import apis from '../api';
+import { NavLink } from 'react-router-dom';
+import {AccountContext} from '../api/AcntContext';
 
 import "./SignInPage.css";
+
+var DataForSignIn;
+var logState;
+
 
 class SignInPage extends Component {
   constructor() {
@@ -27,6 +32,8 @@ class SignInPage extends Component {
       [name]: value
     });
   }
+  
+  
 
   handleSubmit = async e => {
     e.preventDefault();

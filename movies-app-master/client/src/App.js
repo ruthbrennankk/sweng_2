@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage.jsx";
 import SignInPage from "./pages/SignInPage.js";
 
-//import Login from './pages/Login.js';
-//import UserContext from "./api/acnt-mang.js";
+import Login from './pages/Login.js';
+import {AccountProvider, AccountContext} from './api/AcntContext';
 
 import HomePage from "./pages/HomePage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
@@ -66,8 +66,9 @@ export default function App() {
   if (isUser) {
     return (
       <Router>
+        <AccountContext.Provider>
         <Route exact path="/" component={WelcomePage}></Route>
-        <Route exact path="/signin" component={SignInPage}></Route>
+        <Route exact path="/signin" component={Login}></Route>
         <Route exact path="/home" component={HomePage}></Route>
         <Route exact path="/dashboard" component={DashboardPage}></Route>
         <Route exact path="/articles" component={ArticlesPage}></Route>
