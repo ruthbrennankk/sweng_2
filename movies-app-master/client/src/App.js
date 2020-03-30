@@ -19,6 +19,16 @@ import Dash_ArticlesPage from "./pages/DashBoardPages/Dash_ArticlesPage.jsx";
 import Dash_ArticlesCreated from "./pages/DashBoardPages/DashboardComponents/Dash_ArticlesCreated.jsx";
 import CompetenciesPage from "./pages/DashBoardPages/CompetenciesPage.jsx";
 
+import HomePageManager from "./managerPages/HomePage.jsx";
+import DashboardPageManager from "./managerPages/DashboardPage.jsx";
+import ArticlesPageManager from "./managerPages/ArticlesPage.jsx";
+import ProfilePageManager from "./managerPages/ProfilePage.jsx";
+import SettingsPageManager from "./managerPages/SettingsPage.jsx";
+import ImpactPageManager from "./managerPages/DashBoardPages/ImpactPage.jsx";
+import Dash_ArticlesPageManager from "./managerPages/DashBoardPages/Dash_ArticlesPage.jsx";
+import CompetenciesPageManager from "./managerPages/DashBoardPages/CompetenciesPage.jsx";
+import RankingPageManager from "./managerPages/DashBoardPages/RankingPage.jsx";
+
 //import './App.css';
 /*export const AuthContext = React.createContext();
 const initialState = {
@@ -51,8 +61,9 @@ const reducer = (state, action) => {
   }
 };*/
 
-export default class App extends Component {
-  render() {
+export default function App() {
+  const isUser = false;
+  if (isUser) {
     return (
       <Router>
         <AccountContext.Provider>
@@ -64,10 +75,45 @@ export default class App extends Component {
         <Route exact path="/profile" component={ProfilePage}></Route>
         <Route exact path="/settings" component={SettingsPage}></Route>
         <Route exact path="/dashboard/impact" component={ImpactPage}></Route>
-        <Route exact path="/dashboard/articles" component={Dash_ArticlesPage}></Route>
-        <Route exact path="/dashboard/competencies" component={CompetenciesPage}></Route>
-        <Route exact path="/dashboard/articlesCreated" component={Dash_ArticlesCreated}></Route>
-        </AccountContext.Provider>
+        <Route
+          exact
+          path="/dashboard/articles"
+          component={Dash_ArticlesPage}
+        ></Route>
+        <Route
+          exact
+          path="/dashboard/competencies"
+          component={CompetenciesPage}
+        ></Route>
+        <Route
+          exact
+          path="/dashboard/articlesCreated"
+          component={Dash_ArticlesCreated}
+        ></Route>
+      </Router>
+    );
+  } else {
+    return (
+      <Router>
+        <Route exact path="/" component={WelcomePage}></Route>
+        <Route exact path="/signin" component={SignInPage}></Route>
+        <Route exact path="/home" component={HomePageManager}></Route>
+        <Route exact path="/dashboard" component={DashboardPageManager}></Route>
+        <Route exact path="/articles" component={ArticlesPageManager}></Route>
+        <Route exact path="/profile" component={ProfilePageManager}></Route>
+        <Route exact path="/settings" component={SettingsPageManager}></Route>
+        <Route exact path="/dashboard/impact" component={ImpactPageManager}></Route>
+        <Route exact path="/dashboard/ranking" component={RankingPageManager}></Route>
+        <Route
+          exact
+          path="/dashboard/articles"
+          component={Dash_ArticlesPageManager}
+        ></Route>
+        <Route
+          exact
+          path="/dashboard/competencies"
+          component={CompetenciesPageManager}
+        ></Route>
       </Router>
     );
   }

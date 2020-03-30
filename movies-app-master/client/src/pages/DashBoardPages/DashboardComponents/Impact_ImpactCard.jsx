@@ -7,14 +7,15 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles({
   typographyColor: {
     color: "#48236a"
-  }
+  },
+  
 });
 
 export default function Impact_ImpactCard() {
   const classes = useStyles();
   return (
-    <Grid item xs >
-      <Grid container alignItems="stretch" className={classes.currentLevel} >
+    <Grid item xs>
+      <Grid container alignItems="stretch" className={classes.currentLevel}>
         <Typography
           className={classes.typographyColor}
           variant="h6"

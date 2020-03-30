@@ -50,7 +50,6 @@ export default function Overview_Contribution() {
         container
         alignItems="stretch"
         className={classes.contributionOvertime}
-        
       >
         <Typography className={classes.typographyColor} variant="body1">
           Year of contributions
