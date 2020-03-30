@@ -124,7 +124,8 @@ export default function PrimarySearchAppBar() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
+  function renderMenu (){
+    return(
     <Menu
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -137,10 +138,12 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
-  );
+    )
+    }
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
+  function renderMobileMenu (){
+    return(
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
@@ -178,7 +181,8 @@ export default function PrimarySearchAppBar() {
         <p>Profile</p>
       </MenuItem>
     </Menu>
-  );
+    );
+    }
 
   return (
     
@@ -218,7 +222,7 @@ export default function PrimarySearchAppBar() {
                     {user[0].name}
               </Typography>
                   <Typography className={classes.Userl2} variant="h6">
-                    {/* Jr Engineer */} Rank - {user[0].rank}
+                    {user[0].position}
               </Typography>
                 </div>
 

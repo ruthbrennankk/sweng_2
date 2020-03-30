@@ -12,19 +12,20 @@ var stateCheck;
 export const Login = () => {
    
    
-        let data = {};
         
-   // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+
     var logState;
     
     
-    //const [data, setData] = React.useState(initialState);
+
     const handleInputChange = async (e)=> {
         
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
         let name = target.name;
-
+        // console.log(name);
+        // console.log(value);
+        // console.log("Handle Change Data^");
         if(name == "email"){
             email = value;
 
@@ -33,41 +34,49 @@ export const Login = () => {
         }
     };
     
-    const [ {user: initstate = { name: "test",email: "test",password: "test",isManagement: false,rank: 0,pointValue: 0,}}, setState] = useContext(AccountContext);
+    const [ {user: initstate = { name: "test",
+    email: "test",
+    password: "test",
+    isManagement: false,
+    rank: [0,0,0,0],
+    pointValue: [0,0,0,0],
+    pointValue: [0,0,0,0],
+    articlesCreated: [0],
+    articlesViewed: [0],
+    articleViews: [0],
+    articlesLikes: [0],
+    articleRelevanceRec: [0],
+    articlesImpactRatingRec: [0],
+    myArticlesLikes: [0],
+    myArticlesImpactRec: [0] }}, setState] = useContext(AccountContext);
    const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
-    if(count == 0){
-        console.log("Should only see this once");
-        setState(startState);
+    // if(count == 0){
+    //     console.log("Should only see this once");
+    //     setState(startState);
 
-    }
+    // }
     count++;
    
    
   const HandleFormSubmit = async (event) => {
         event.preventDefault();
-        
-        //var email = '';
-    //email = this.state.email;
+
     
     var loginSuccess = false;
+    var tempEmail = email;
+
     
     
 
-
-    const payload = email;
+     const payload = tempEmail;
+    console.log(payload);
     await apis.getUserByEmail(payload).then(res => {
       window.alert('Login Account attempt')
       //checks if email is correct
       if(res.data.success === false){
         console.log("Email Incorrect Try Again");
-        //window.alert('Email Incorect');
-       // loginSuccess = false;
         logState = false;
       }else{
-        //console.log(this.state);
-        //console.log(res.data.data.name);
-        //console.log(res.data.data.password);
-        //console.log(this.state.password);
         if(res.data.data.password === password){
           console.log("It works");
           loginSuccess = true;
@@ -77,46 +86,30 @@ export const Login = () => {
           console.log("Password incorrect.");
           loginSuccess = false;
         }
-        data = res.data.data;
+        var data = res.data.data;
         console.log('The User Account: ');
         console.log(res.data.data);
         setState(res.data.data);
-        //setState(state => ({...state, user: res.data.data}));
 
       }
 
      // resets state of text boxs depending on outcome of login attempt
       if(loginSuccess){
-        
-          //DataForSignIn = res.data;
-          logState = true;
-         stateCheck = true;
-
-          
-          
-          //
-          console.log(initstate.name);
-       // Context.call(DataForSignIn);
-        
-
-
-
-
-        
-          
-          email = "";
-          password = "";
-          
-        
-
-      
-      }
+        //  logState = true;
+        //  stateCheck = true;
+        //  console.log(initstate.name);
+        //  email = "";
+        //  password = ""; 
+        }else{
+            email = "";
+            password = "";
+        }
       
     }).catch(err => console.log(err));
     
     
       
-      password = "";
+      //password = "";
       
     
     //logState = false;
