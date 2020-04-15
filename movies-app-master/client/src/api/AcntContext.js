@@ -6,21 +6,21 @@ const AccountContext = React.createContext([{}, () => {}]);
 const AccountProvider = (props) => {
 const [state, setState] = useState({
      user : {
-            rank: [0, 0, 0, 0],
-            pointValue: [0, 0, 0, 0],
-            articlesCreated: [0, 0],
-            articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            articleViews: [0, 0, 0, 0],
-            articlesLikes: [0, 0, 0],
-            articleRelevanceRec: [0, 0, 0],
-            articlesImpactRatingRec: [0, 0, 0],
-            myArticlesLikes: [0, 0, 0],
-            myArticlesImpactRec: [0],
-            name: "Admin",
-            position: "Software Dev",
-            email: "testing@test.com",
-            password: "admin",
-            isManagement: false
+        name: "Lucy Byrne",
+        position: "Junior Engineer",
+        email: "Byrnel@tacit.com",
+        password: "Pass",
+        isManagement: false,
+        rank: [1, 2,4,3],
+        pointValue: [1000, 2100, 4100,3200],
+        articlesCreated: [1,2],
+        articlesViewed: [4,9,6,10,16,13,19,18,15],
+        articleViews: [0,24,37,0],
+        articlesLikes: [3,2,4],
+        articleRelevanceRec: [3,1,5],
+        articlesImpactRatingRec: [5,2,2],
+        myArticlesLikes: [146,47,28],
+        myArticlesImpactRec: [22,36,21],
     
         }
 });

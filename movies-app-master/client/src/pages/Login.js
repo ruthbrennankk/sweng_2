@@ -10,7 +10,8 @@ var password ;
 var count = 0;
 var stateCheck;
 var initstate;
-export const Login = () => {
+var loginState = false;
+export default function Login () {
    
    
         
@@ -24,9 +25,7 @@ export const Login = () => {
         let target = e.target;
         let value = target.type === 'checkbox' ? target.checked : target.value;
         let name = target.name;
-        // console.log(name);
-        // console.log(value);
-        // console.log("Handle Change Data^");
+       
         if(name == "email"){
             email = value;
 
@@ -34,76 +33,7 @@ export const Login = () => {
             password = value;
         }
     };
-    console.log("Testing 1");
-
-    // initstate = {
-    //         rank: [0, 0, 0, 0],
-    //         pointValue: [0, 0, 0, 0],
-    //         articlesCreated: [0, 0],
-    //         articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    //         articleViews: [0, 0, 0, 0],
-    //         articlesLikes: [0, 0, 0],
-    //         articleRelevanceRec: [0, 0, 0],
-    //         articlesImpactRatingRec: [0, 0, 0],
-    //         myArticlesLikes: [0, 0, 0],
-    //         myArticlesImpactRec: [0],
-    //         name: "test",
-    //         position: "test",
-    //         email: "test",
-    //         password: "test",
-    //         isManagement: false
-    
-    //     }
-
-
-    // const [state ={ user: initstate = {
-    //         rank: [0, 0, 0, 0],
-    //         pointValue: [0, 0, 0, 0],
-    //         articlesCreated: [0, 0],
-    //         articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    //         articleViews: [0, 0, 0, 0],
-    //         articlesLikes: [0, 0, 0],
-    //         articleRelevanceRec: [0, 0, 0],
-    //         articlesImpactRatingRec: [0, 0, 0],
-    //         myArticlesLikes: [0, 0, 0],
-    //         myArticlesImpactRec: [0],
-    //         name: "test",
-    //         position: "test",
-    //         email: "test",
-    //         password: "test",
-    //         isManagement: false
-    
-    //     } }, setState] = useContext(AccountContext);
-
-    
-
   
-    
-    console.log("Testing 2");
-//   const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
-    if(count == 0){
-        console.log("Should only see this once");
-        // setState(
-        // const [{ user: initstate = {
-        //     rank: [0, 0, 0, 0],
-        //     pointValue: [0, 0, 0, 0],
-        //     articlesCreated: [0, 0],
-        //     articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        //     articleViews: [0, 0, 0, 0],
-        //     articlesLikes: [0, 0, 0],
-        //     articleRelevanceRec: [0, 0, 0],
-        //     articlesImpactRatingRec: [0, 0, 0],
-        //     myArticlesLikes: [0, 0, 0],
-        //     myArticlesImpactRec: [0],
-        //     name: "test",
-        //     position: "test",
-        //     email: "test",
-        //     password: "test",
-        //     isManagement: false
-    
-        // } }, setState] = useContext(AccountContext);
-    }
-    console.log("Testing 3");
     count++;
    
     var data;
@@ -122,14 +52,13 @@ export const Login = () => {
      const payload = tempEmail;
     console.log(payload);
     await apis.getUserByEmail(payload).then(res => {
-      window.alert('Login Account attempt')
+      //window.alert('Login Account attempt')
       //checks if email is correct
       if(res.data.success === false){
         console.log("Email Incorrect Try Again");
         logState = false;
       }else{
         if(res.data.data.password === password){
-          console.log("It works");
           loginSuccess = true;
           console.log(res.data.data.name + " Just Logged on Succesfully");
           console.log(res.data.data.name + " is Rank : "+res.data.data.rank);
@@ -141,7 +70,7 @@ export const Login = () => {
         console.log('The User Account: ');
         console.log(res.data.data);
         
-        //setState(res.data.data);
+   
 
       }
 
@@ -156,6 +85,7 @@ export const Login = () => {
             email = "";
             password = "";
         }
+        loginState = loginSuccess;
       
     }).catch(err => console.log(err));
    
@@ -165,14 +95,16 @@ export const Login = () => {
       //password = "";
       
     
-    //logState = false;
-//    console.log(initstate.name);
+
     console.log("Got Past it all");
+    console.log(loginState);
     console.log(data);
     console.log(state.user);
+
     state.user = data;
     //setState({data});
     console.log("Welcome " + state.user.name);
+    
     
    
     };
@@ -189,6 +121,7 @@ export const Login = () => {
         <div className="SignInApp">
             <div className="SignInApp__Left">
                 <div className="SignInPage">
+                   
 
                     <form onSubmit={HandleFormSubmit}>
                         <div className="SignInField">
@@ -221,15 +154,18 @@ export const Login = () => {
 
 
                         <div className="SignInField">
-                         
 
-                            {count>2 ? (
+                        
+                         
+                            {/* Due to issues with Navlink, for demo purposes login is disabled, functionally it works however when navlink is active it skips over the validation code*/}
+                            {/* Change != to == to show different users logging in, however manual url navigation will be required */}
+                            {loginState != true ? (
                                 console.log("Nav"),
                                     <NavLink to="/home"><button className="SignIn__Button mr-20">Sign In</button></NavLink>
                             ) : (
                                 console.log("Not Nav"),
                                 <button className="SignIn__Button mr-20">Sign In</button>
-                            )}
+                            )} 
 
 
                             
@@ -249,7 +185,7 @@ export const Login = () => {
  
     );
 }
-export default Login; 
+
 
 
 /*
