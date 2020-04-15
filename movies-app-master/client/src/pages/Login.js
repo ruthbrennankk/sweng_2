@@ -186,8 +186,8 @@ export const Login = () => {
        
      
 
-        <div className="App1">
-            <div className="App__Left1">
+        <div className="SignInApp">
+            <div className="SignInApp__Left">
                 <div className="SignInPage">
 
                     <form onSubmit={HandleFormSubmit}>
