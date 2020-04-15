@@ -35,12 +35,13 @@ export default function App() {
   const isUser = true;
   
   
- // if (isUser) {
+ if (isUser) {
     return (
       
 
         
       <AccountProvider>
+       
       <Router>
 
         
@@ -74,31 +75,31 @@ export default function App() {
  
      
     );
- /* } else {
+  } else {
     return (
       <Router>
-        //{/* <AccountContext.Provider> *///}
-  //       <Route exact path="/" component={WelcomePage}></Route>
-  //       <Route exact path="/signin" component={SignInPage}></Route>
-  //       <Route exact path="/home" component={HomePageManager}></Route>
-  //       <Route exact path="/dashboard" component={DashboardPageManager}></Route>
-  //       <Route exact path="/articles" component={ArticlesPageManager}></Route>
-  //       <Route exact path="/profile" component={ProfilePageManager}></Route>
-  //       <Route exact path="/settings" component={SettingsPageManager}></Route>
-  //       <Route exact path="/dashboard/impact" component={ImpactPageManager}></Route>
-  //       <Route exact path="/dashboard/ranking" component={RankingPageManager}></Route>
-  //       <Route
-  //         exact
-  //         path="/dashboard/articles"
-  //         component={Dash_ArticlesPageManager}
-  //       ></Route>
-  //       <Route
-  //         exact
-  //         path="/dashboard/competencies"
-  //         component={CompetenciesPageManager}
-  //       ></Route>
-  //       {/* </AccountContext.Provider> */}
-  //     </Router>
-  //   );
-  // }
+         <AccountContext.Provider> 
+        <Route exact path="/" component={WelcomePage}></Route>
+        <Route exact path="/signin" component={SignInPage}></Route>
+        <Route exact path="/home" component={HomePageManager}></Route>
+        <Route exact path="/dashboard" component={DashboardPageManager}></Route>
+        <Route exact path="/articles" component={ArticlesPageManager}></Route>
+        <Route exact path="/profile" component={ProfilePageManager}></Route>
+        <Route exact path="/settings" component={SettingsPageManager}></Route>
+        <Route exact path="/dashboard/impact" component={ImpactPageManager}></Route>
+        <Route exact path="/dashboard/ranking" component={RankingPageManager}></Route>
+        <Route
+          exact
+          path="/dashboard/articles"
+          component={Dash_ArticlesPageManager}
+        ></Route>
+        <Route
+          exact
+          path="/dashboard/competencies"
+          component={CompetenciesPageManager}
+        ></Route>
+         </AccountContext.Provider> 
+      </Router>
+    );
+  }
 }
