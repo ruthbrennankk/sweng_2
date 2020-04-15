@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import {AccountContext} from "../../../api/AcntContext";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles(theme => ({
 let articlesNo = 53;
 
 export default function Overview_ArticlesViewed() {
+  const [state, setState] = useContext(AccountContext);
   const classes = useStyles();
 
   return (
@@ -23,7 +25,7 @@ export default function Overview_ArticlesViewed() {
 
       <Divider />
       <Typography className={classes.typographyColor} variant="h5" gutterBottom>
-        {articlesNo} Articles viewed
+        {state.user.articleViews[3]} Articles viewed
       </Typography>
     </Grid>
   );

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import ReactDOM from "react-dom";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import {AccountContext} from "../../../api/AcntContext";
 
 //graphs
 import Doughnut from "../../Graphs/Doughnut";
@@ -39,6 +40,7 @@ const StyledButton = withStyles({
 const articlesYouRated = `Articles you rated`;
 
 export default function Overview_ArticlesRated() {
+  const [state, setState] = useContext(AccountContext);
   const classes = useStyles();
 
   return (
@@ -50,7 +52,7 @@ export default function Overview_ArticlesRated() {
         <StyledButton>+ Details</StyledButton>
       </Grid>
       <Doughnut
-         data={[5, 12, 4, 32]}
+         data={[state.user.articlesImpactRatingRec[0],state.user.articlesImpactRatingRec[1],state.user.articlesImpactRatingRec[2],11]}
          labels={["Solved your problem", "Didn't solve your problem", "Partial solution to your problem", "Impact - not recorded"]}
          backgroundColor={[
            "#75bf53",

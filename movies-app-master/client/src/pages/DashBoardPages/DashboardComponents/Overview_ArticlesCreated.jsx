@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import {AccountContext} from "../../../api/AcntContext";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -18,6 +19,7 @@ let problemsSolved = 0;
 let problemsPartiallySolved = 0;
 
 export default function Overview_ArticlesCreated() {
+  const [state, setState] = useContext(AccountContext);
   const classes = useStyles();
 
   return (

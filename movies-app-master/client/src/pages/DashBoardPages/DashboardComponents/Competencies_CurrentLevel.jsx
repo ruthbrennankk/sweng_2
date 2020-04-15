@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import levelOne from "../../Images/levelOne.png";
 import levelZero from "../../Images/levelZero.png";
+
+import {AccountContext} from '../../../api/AcntContext';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -24,8 +27,10 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+
 export default function Competencies_CurrentLevel() {
   const classes = useStyles();
+  const [state, setState] = useContext(AccountContext);
   var graph = {
     data: [65, 59, 80, 81, 56, 300],
     labels: ["Jan", "Feb", "March", "April", "May", "June"]

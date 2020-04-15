@@ -30,45 +30,24 @@ import CompetenciesPageManager from "./managerPages/DashBoardPages/CompetenciesP
 import RankingPageManager from "./managerPages/DashBoardPages/RankingPage.jsx";
 
 //import './App.css';
-/*export const AuthContext = React.createContext();
-const initialState = {
-  isAuthenticated: false,
-  user: null,
-  token: null,
-};
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "LOGIN":
-      
-    localStorage.setItem("user", JSON.stringify(action.payload.user));
-    localStorage.setItem("token", JSON.stringify(action.payload.token));
-    return {
-      ...state,
-      isAuthenticated: true,
-      user: action.payload.user,
-      token: action.payload.token
-    };
-    case "LOGOUT":
-      localStorage.clear();
-      return {
-        ...state,
-        isAuthenticated: false,
-        user: null
-      };
-      default:
-        return state;
-
-  }
-};*/
 
 export default function App() {
-  const isUser = false;
-  if (isUser) {
+  const isUser = true;
+  
+  
+ // if (isUser) {
     return (
+      
+
+        
+      <AccountProvider>
       <Router>
-        <AccountContext.Provider>
+
+        
         <Route exact path="/" component={WelcomePage}></Route>
-        <Route exact path="/signin" component={SignInPage}></Route>
+        
+        <Route exact path="/signin" component={Login}></Route>
+        
         <Route exact path="/home" component={HomePage}></Route>
         <Route exact path="/dashboard" component={DashboardPage}></Route>
         <Route exact path="/articles" component={ArticlesPage}></Route>
@@ -90,34 +69,36 @@ export default function App() {
           path="/dashboard/articlesCreated"
           component={Dash_ArticlesCreated}
         ></Route>
-        </AccountContext.Provider>
       </Router>
+      </AccountProvider>
+ 
+     
     );
-  } else {
+ /* } else {
     return (
       <Router>
-        <AccountContext.Provider>
-        <Route exact path="/" component={WelcomePage}></Route>
-        <Route exact path="/signin" component={SignInPage}></Route>
-        <Route exact path="/home" component={HomePageManager}></Route>
-        <Route exact path="/dashboard" component={DashboardPageManager}></Route>
-        <Route exact path="/articles" component={ArticlesPageManager}></Route>
-        <Route exact path="/profile" component={ProfilePageManager}></Route>
-        <Route exact path="/settings" component={SettingsPageManager}></Route>
-        <Route exact path="/dashboard/impact" component={ImpactPageManager}></Route>
-        <Route exact path="/dashboard/ranking" component={RankingPageManager}></Route>
-        <Route
-          exact
-          path="/dashboard/articles"
-          component={Dash_ArticlesPageManager}
-        ></Route>
-        <Route
-          exact
-          path="/dashboard/competencies"
-          component={CompetenciesPageManager}
-        ></Route>
-        </AccountContext.Provider>
-      </Router>
-    );
-  }
+        //{/* <AccountContext.Provider> *///}
+  //       <Route exact path="/" component={WelcomePage}></Route>
+  //       <Route exact path="/signin" component={SignInPage}></Route>
+  //       <Route exact path="/home" component={HomePageManager}></Route>
+  //       <Route exact path="/dashboard" component={DashboardPageManager}></Route>
+  //       <Route exact path="/articles" component={ArticlesPageManager}></Route>
+  //       <Route exact path="/profile" component={ProfilePageManager}></Route>
+  //       <Route exact path="/settings" component={SettingsPageManager}></Route>
+  //       <Route exact path="/dashboard/impact" component={ImpactPageManager}></Route>
+  //       <Route exact path="/dashboard/ranking" component={RankingPageManager}></Route>
+  //       <Route
+  //         exact
+  //         path="/dashboard/articles"
+  //         component={Dash_ArticlesPageManager}
+  //       ></Route>
+  //       <Route
+  //         exact
+  //         path="/dashboard/competencies"
+  //         component={CompetenciesPageManager}
+  //       ></Route>
+  //       {/* </AccountContext.Provider> */}
+  //     </Router>
+  //   );
+  // }
 }
