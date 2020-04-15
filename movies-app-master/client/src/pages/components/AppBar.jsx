@@ -17,7 +17,7 @@ import Button from '@material-ui/core/Button';
 
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
-import {AccountContext, AccountProvider} from '../../api/AcntContext';
+import {AccountContext} from '../../api/AcntContext';
 
 
 const useStyles = makeStyles(theme => ({
@@ -183,19 +183,23 @@ export default function PrimarySearchAppBar() {
     </Menu>
     );
     }
+    const [state, setState] = useContext(AccountContext);
 
   return (
     
+    
     <div className={classes.grow}>
-      {/* <AccountContext.Consumer> */}
+
+     
       
        
 
         
-        {/* {user => ( */}
           
           <AppBar position="static" style={style}>
             <Toolbar>
+              
+
               <img src={Logo}
                 className={classes.menuButton}
                 height="25" width="25" />
@@ -219,12 +223,12 @@ export default function PrimarySearchAppBar() {
                 <Divider orientation="vertical" flexItem style={dividerStyles} />
                 <div style={textStyle}>
                   <Typography className={classes.Userl1} variant="h6">
-                    {/* {user[0].name} */}
-                    Lucy Byrne
+                   {state.user.name}
+                   
               </Typography>
                   <Typography className={classes.Userl2} variant="h6">
-                    {/* {user[0].position} */}
-                    Junior Engineer
+                   {state.user.position}
+                   
               </Typography>
                 </div>
 
@@ -251,23 +255,27 @@ export default function PrimarySearchAppBar() {
                   <MoreIcon />
                 </IconButton>
               </div>
+              
             </Toolbar>
+           
+       
+            
           </AppBar>
+          
+          
 
         
          
    
-        {/* )
-} */}
-{/* } */}{renderMenu}
-        {renderMobileMenu}
-        
+  {renderMenu}
+            
+{renderMobileMenu}
         
        
         
       
     
-        {/* </AccountContext.Consumer> */}
+       
     </div>
     
   );

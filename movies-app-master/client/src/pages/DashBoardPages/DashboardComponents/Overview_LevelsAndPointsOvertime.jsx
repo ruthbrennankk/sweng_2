@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import LineGraph from "../../Graphs/LineGraph";
+import {AccountContext} from "../../../api/AcntContext";
 
 const useStyles = makeStyles(theme => ({
   typographyColor: {
@@ -13,7 +14,9 @@ const useStyles = makeStyles(theme => ({
 const levelsAndPointsOverTime = `Points over time`;
 
 export default function Overview_LevelsAndPointsOvertime() {
+  const [state, setState] = useContext(AccountContext);
   const classes = useStyles();
+
   var graph = {
     data: [54, 300, 1667, 735],
     labels: ["Jan", "Feb", "March", "April"]
@@ -24,7 +27,7 @@ export default function Overview_LevelsAndPointsOvertime() {
         {levelsAndPointsOverTime}
       </Typography>
       <LineGraph
-            data={graph.data}
+            data={state.user.pointValue}
             labels={graph.labels}
             displayLengend={false}
             borderColour={"#9545d8"}

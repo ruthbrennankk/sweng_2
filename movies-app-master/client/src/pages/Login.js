@@ -9,6 +9,7 @@ var email ;
 var password ;
 var count = 0;
 var stateCheck;
+var initstate;
 export const Login = () => {
    
    
@@ -34,15 +35,55 @@ export const Login = () => {
         }
     };
     console.log("Testing 1");
+
+    // initstate = {
+    //         rank: [0, 0, 0, 0],
+    //         pointValue: [0, 0, 0, 0],
+    //         articlesCreated: [0, 0],
+    //         articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //         articleViews: [0, 0, 0, 0],
+    //         articlesLikes: [0, 0, 0],
+    //         articleRelevanceRec: [0, 0, 0],
+    //         articlesImpactRatingRec: [0, 0, 0],
+    //         myArticlesLikes: [0, 0, 0],
+    //         myArticlesImpactRec: [0],
+    //         name: "test",
+    //         position: "test",
+    //         email: "test",
+    //         password: "test",
+    //         isManagement: false
     
-    //const [state, setState] = useContext(AccountContext);
-    console.log("Testing 2");
+    //     }
+
+
+    // const [state ={ user: initstate = {
+    //         rank: [0, 0, 0, 0],
+    //         pointValue: [0, 0, 0, 0],
+    //         articlesCreated: [0, 0],
+    //         articlesViewed: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    //         articleViews: [0, 0, 0, 0],
+    //         articlesLikes: [0, 0, 0],
+    //         articleRelevanceRec: [0, 0, 0],
+    //         articlesImpactRatingRec: [0, 0, 0],
+    //         myArticlesLikes: [0, 0, 0],
+    //         myArticlesImpactRec: [0],
+    //         name: "test",
+    //         position: "test",
+    //         email: "test",
+    //         password: "test",
+    //         isManagement: false
+    
+    //     } }, setState] = useContext(AccountContext);
+
+    
+
   
-  //  const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
-     const [startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,}, setState] = useContext(AccountContext);
+    
+    console.log("Testing 2");
+//   const startState = { name: "test2",email: "test2",password: "test2",isManagement: false,rank: 0,pointValue: 0,};
     if(count == 0){
         console.log("Should only see this once");
-        //setState()
+        // setState(
         // const [{ user: initstate = {
         //     rank: [0, 0, 0, 0],
         //     pointValue: [0, 0, 0, 0],
@@ -66,6 +107,7 @@ export const Login = () => {
     count++;
    
     var data;
+    const [state, setState] = useContext(AccountContext);
   const HandleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -99,7 +141,7 @@ export const Login = () => {
         console.log('The User Account: ');
         console.log(res.data.data);
         
-       // setState(res.data.data);
+        //setState(res.data.data);
 
       }
 
@@ -126,13 +168,20 @@ export const Login = () => {
     //logState = false;
 //    console.log(initstate.name);
     console.log("Got Past it all");
-
+    console.log(data);
+    console.log(state.user);
+    state.user = data;
+    //setState({data});
+    console.log("Welcome " + state.user.name);
     
    
     };
-    //const[{user: initstate= {data}}, setState]= useContext(AccountContext);
+    //setState(data);
+    
 
     return(
+        // <AccountContext.Provider>
+        
        
        
      
@@ -194,6 +243,9 @@ export const Login = () => {
                 </div>
             </div>
         </div>
+
+      
+        // </AccountContext.Provider>
  
     );
 }

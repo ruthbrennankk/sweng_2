@@ -17,7 +17,7 @@ var LoggedinUser;
 // function AssignContextValue(){
 //    [state, setState] = useContext(AccountContext);
 //   LoggedinUser = state;
-//   return LoggedinUser;
+//   return LoggedinUser
 // }
 
 
@@ -29,9 +29,14 @@ const componentsStyle = {
 
 
 class ProfilePage extends Component {
-
+  
+ 
+  
     render() {
         return (
+         
+
+          
             <Grid>
             <AppBar></AppBar>
               <Grid style={componentsStyle}>
@@ -39,20 +44,24 @@ class ProfilePage extends Component {
                 <Grid style={{flex: 1 }}>
                   <Grid>
                   <AccountContext.Consumer>
-                    {/* {user => (
-                      <h3>Hello Again, {user.name}</h3>
+                    {user => (
+
+
+                      <h3>Hello Again,{user[0].user.name} </h3>
+
+
+
+
+
                     )}
-                   */}
-    
+                  </AccountContext.Consumer>
                    
-
-
-                    </AccountContext.Consumer>
                     </Grid>
                   
                 </Grid>
               </Grid>
           </Grid>
+          
         );
     }
 }
