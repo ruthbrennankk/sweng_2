@@ -33,9 +33,9 @@ import RankingPageManager from "./managerPages/DashBoardPages/RankingPage.jsx";
 
 export default function App() {
   const isUser = true;
-  
-  
- if (isUser) {
+
+  if (isUser) {
+
     return (
       
 
@@ -44,7 +44,6 @@ export default function App() {
        
       <Router>
 
-        
         <Route exact path="/" component={WelcomePage}></Route>
         
         <Route exact path="/signin" component={Login}></Route>
@@ -78,7 +77,7 @@ export default function App() {
   } else {
     return (
       <Router>
-         <AccountContext.Provider> 
+         
         <Route exact path="/" component={WelcomePage}></Route>
         <Route exact path="/signin" component={SignInPage}></Route>
         <Route exact path="/home" component={HomePageManager}></Route>
@@ -98,7 +97,7 @@ export default function App() {
           path="/dashboard/competencies"
           component={CompetenciesPageManager}
         ></Route>
-         </AccountContext.Provider> 
+         
       </Router>
     );
   }
